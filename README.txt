@@ -13,6 +13,6 @@ JFreeChart: JFreeChart can be found at http://www.jfree.org/jfreechart/
 Tab View: A JavaScript / CSS library to display tabs http://www.dhtmlgoodies.com/
 
 --------------------------------------------------------------------------------
-I am debating bringing this up to current, and as of NetBeans 8.0, it still
+I (setjmp) am debating bringing this up to current, and as of NetBeans 8.0, it still
 compiles from the version 1.60 files that are found on the files that Dracy
 still has up (as of today). 
