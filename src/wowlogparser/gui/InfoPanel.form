@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.5" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="780" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="578" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="lineWrap" type="boolean" value="true"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="The parser works in a multi step way. First the log file is parsed line by line to get a list of events classified by damage healing etc. The next step is to find fights. &#xa;&#xa;The fights are formed by looking for damage events vs NPC:s. If a damage event vs an NPC is found and that NPC does not have a fight associated with it a new fight is added. All damage events done to the NPC and any damage the NPC does to someone else is added to the fight. All healing events done during the fight are also added to be able to find out who healed during the fight etc. If a UNIT_DIED event is found for the NPC then the fight is finished. If a UNIT_DIED event cannot be found then the fight is ended after a specified time has passed(can be found in the GUI). Damage events to other NPCs than the one the fight is about or other NPCs attacking players is not added to the fight. Those events are added to a special variable in the fight though, so they can be seen when splitting fights in the show all events dialog.&#xa;&#xa;When the fights are formed they are in turn processed to find the participants. Participants can only be players or pets.&#xa;&#xa;DPS for fights where the NPC did not die is calculated by finding the first and last damage event done to the NPC. The total fight time is then calculated as the time between the first and the last damage event done to the target. This is done to prevent DPS being too low because of no action being done for a long time. Active DPS is found out by going through all damage events and if there is a break in damage dealing for longer than 15 seconds (might have changed) then that break is subtracted from the total time. The active DPS is then the total damage divided by the active time.&#xa;&#xa;&#xa;"/>
+            <Property name="wrapStyleWord" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

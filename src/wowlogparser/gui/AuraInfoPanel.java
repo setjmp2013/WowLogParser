@@ -1,0 +1,226 @@
+/*
+This file is part of Wow Log Parser, a program to parse World of Warcraft combat log files.
+Copyright (C) Gustav Haapalahti
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+package wowlogparser.gui;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.BoxLayout;
+import javax.swing.JSeparator;
+import javax.swing.JToolBar.Separator;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.border.EmptyBorder;
+import wowlogparserbase.EventCollection;
+import wowlogparserbase.EventCollectionSimple;
+import wowlogparserbase.SpellInfo;
+import wowlogparserbase.eventfilter.FilterSkill;
+import wowlogparserbase.events.*;
+import wowlogparserbase.events.aura.*;
+
+/**
+ *
+ * @author  racy
+ */
+public class AuraInfoPanel extends javax.swing.JPanel {
+
+    List<BasicEvent> events;
+    List<PeriodGraphComponent> components = new ArrayList<PeriodGraphComponent>();
+    int zoomFactor = 10;
+    
+    /** Creates new form AuraInfoPanel */
+    public AuraInfoPanel(List<BasicEvent> events, double startTime, double stopTime) {
+        initComponents();
+        this.events = events;
+        initIntervals(startTime, stopTime);
+    }
+
+    void initIntervals(double startTime, double stopTime) {
+        jScrollPane1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
+        BoxLayout bl = new BoxLayout(jPanelPeriods, BoxLayout.Y_AXIS);
+        jPanelPeriods.setLayout(bl);                
+        
+        EventCollection ec = new EventCollectionSimple(events);
+        List<SpellInfo> sis = ec.getIDs(EventCollection.TYPE_ANY_SPELL);
+        
+        for (SpellInfo si : sis) {
+            EventCollection currentEvents = ec.filter(new FilterSkill(si.spellID, si.name, FilterSkill.ANY_SCHOOL, FilterSkill.ANY_POWER_TYPE));
+            PeriodGraphComponent pg = new PeriodGraphComponent(si.name + " (" + si.spellID + ")", 50, startTime, stopTime, true, zoomFactor, 2);
+            pg.setToolTipText(si.name);
+            for (BasicEvent e : currentEvents.getEvents()) {
+                if (e instanceof SpellAuraAppliedEvent) {
+                    pg.addStart(e.time);
+                    //pg.addEvent(Color.MAGENTA, PeriodGraphComponent.SHAPE_CIRCLE, e.time, 0.5, 0.8, e.logType + " " + e.getTimeString());
+                }
+                if (e instanceof SpellAuraRemovedEvent) {
+                    pg.addStop(e.time);
+                    //pg.addEvent(Color.MAGENTA, PeriodGraphComponent.SHAPE_SQUARE, e.time, 0.5, 0.8, e.logType + " " + e.getTimeString());
+                }
+            }
+            pg.compilePeriods();
+            components.add(pg);
+            jPanelPeriods.add(pg);
+        }
+        
+        jScrollPane1.getHorizontalScrollBar().addAdjustmentListener(new AdjustmentListener() {
+            public void adjustmentValueChanged(AdjustmentEvent e) {
+                jPanelPeriods.repaint();
+            }
+        });
+
+        jScrollPane1.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
+            public void adjustmentValueChanged(AdjustmentEvent e) {
+                jPanelPeriods.repaint();
+            }
+        });
+//        pg.setPreferredSize(new Dimension(400, 45));
+//        pg.addStart(20);
+//        pg.addStart(30);
+//        pg.addStop(50);
+//        pg.addStart(80);
+//        pg.addStop(90.9);
+//        pg.compilePeriods();
+//        jPanelPeriods.add(pg);
+//        
+//        JSeparator s = new JSeparator();
+//        jPanelPeriods.add(s);
+//        
+//        pg = new PeriodGraphComponent(0, 100, 3, 3);
+//        pg.setPreferredSize(new Dimension(400, 45));
+//        pg.addStart(20);
+//        pg.addStart(30);
+//        pg.addStop(50);
+//        pg.addStart(80);
+//        pg.addStop(90.9);
+//        pg.compilePeriods();
+//        jPanelPeriods.add(pg);
+    }
+    
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanelPeriods = new javax.swing.JPanel();
+        jButtonZoomIn = new javax.swing.JButton();
+        jButtonZoomOut = new javax.swing.JButton();
+
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
+
+        jPanelPeriods.setName("jPanelPeriods"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout jPanelPeriodsLayout = new org.jdesktop.layout.GroupLayout(jPanelPeriods);
+        jPanelPeriods.setLayout(jPanelPeriodsLayout);
+        jPanelPeriodsLayout.setHorizontalGroup(
+            jPanelPeriodsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 825, Short.MAX_VALUE)
+        );
+        jPanelPeriodsLayout.setVerticalGroup(
+            jPanelPeriodsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 573, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(jPanelPeriods);
+
+        jButtonZoomIn.setText("Zoom in");
+        jButtonZoomIn.setName("jButtonZoomIn"); // NOI18N
+        jButtonZoomIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonZoomInActionPerformed(evt);
+            }
+        });
+
+        jButtonZoomOut.setText("Zoom out");
+        jButtonZoomOut.setName("jButtonZoomOut"); // NOI18N
+        jButtonZoomOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonZoomOutActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(190, 190, 190)
+                .add(jButtonZoomIn)
+                .add(18, 18, 18)
+                .add(jButtonZoomOut)
+                .addContainerGap(473, Short.MAX_VALUE))
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 827, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButtonZoomIn)
+                    .add(jButtonZoomOut))
+                .add(18, 18, 18)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+private void jButtonZoomInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZoomInActionPerformed
+    zoomFactor++;
+    if (zoomFactor > 100) {
+        zoomFactor = 100;
+    }
+    for (PeriodGraphComponent p : components) {
+        p.setScaleTowardsPixels(zoomFactor);
+    }
+    invalidate();
+    repaint();
+    jScrollPane1.validate();
+}//GEN-LAST:event_jButtonZoomInActionPerformed
+
+private void jButtonZoomOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZoomOutActionPerformed
+    zoomFactor--;
+    if (zoomFactor < 1) {
+        zoomFactor = 1;
+    }
+    for (PeriodGraphComponent p : components) {
+        p.setScaleTowardsPixels(zoomFactor);
+    }
+    invalidate();
+    repaint();
+    jScrollPane1.validate();
+}//GEN-LAST:event_jButtonZoomOutActionPerformed
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonZoomIn;
+    private javax.swing.JButton jButtonZoomOut;
+    private javax.swing.JPanel jPanelPeriods;
+    private javax.swing.JScrollPane jScrollPane1;
+    // End of variables declaration//GEN-END:variables
+
+}

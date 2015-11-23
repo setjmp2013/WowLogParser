@@ -1,0 +1,472 @@
+Change log
+---------------
+
+1.45.2
+
+Added better tracking of boss kills for automatically made boss fights.
+Fixed a bug in the XML file generation regarding individual damage spell statistics.
+
+1.45
+
+Fixed the parser for WoW 3.2 by supporting the new absorbed value in healing events
+Some GUI updates.
+Changed some XML output to be easier to maintain in the future.
+
+1.44.7
+
+Some GUI changes to the show all events in a list.
+Added logical expression history to "show all events in a list" and "show events in a graph".
+Now showing log types in a sorted order in "show events in a graph".
+
+1.44.6
+
+Added a logical expression parser and an "All" and "None" button to the Show Events in a Graph window.
+Changed the Show Details window to a frame so that it doesn't block input, so now several detail windows can be opened side by side.
+
+1.44.5
+
+Changed GUI layout to include split panes.
+Added a status bar at the bottom of the window with log file dates etc.
+
+1.44.4
+
+Made a lot of code changes, but nothing that should be obvious at first sight.
+Made a change to how Boss Parsing works. I now check what time frame the fight spans and use all events from that to make a new fight. It makes a few details more consistent.
+Moved a setting from the front page to the Settings Dialog.
+
+1.44.3
+
+Fixed a problem with Ulduar friendly vehicles not being parsed as participants.
+Fixed a bug where Pyrite containers turned up as participants.
+
+1.44.2
+
+Quick update to 1.44 after discovering a few "bugs"
+Fixed a few Boss fights being 0 seconds long, like Gothik the Harvester.
+Fixed the new VoA boss fights, was a problem with players getting new GUID types in that dungeon.
+
+1.44
+
+Added Ulduar bosses to the automatic boss parsing.
+
+1.43.3
+
+Fixed a strange problem with the .exe launcher. In the previous version I set the max JVM memory to 90% of free memory and that failed sometimes. The max JVM memory is now a fixed value at 768MB. If there are any problems with this setting you can launch the program with a .bat file with the command: java -Xmx768M -jar WowLogParser.jar and change the 768M to whatever amount of max memory that you want to use.
+
+1.43.2
+
+Added the ability to parse neutral mobs. The option for it is present in settings.
+Small icon/exe changes. Now using Launch4j instead of jSmooth for the .exe wrapper.
+Various other small fixes.
+
+1.43
+
+Added a new ability tab in the "show details" dialog, and to the HTML export.
+The ability tab shows buffs given/gained, debuffs given/gained, resurrections given/gained, friendly/hostile dispells, deaths.
+Double clicking a row in the ability tab shows the events where the things happened.
+Added presence % to the main participant table, and to the HTML export.
+Some additions to the XML export (absorbed, blocked, resisted)
+
+1.42.2
+
+Fixed some army of the dead pets bugs.
+Changed so that a pet can only be assigned once to a player.
+
+1.42
+
+Added parsing of guardian pets.
+Special assignment of Army of the Dead pets to the correct death knight (not 100% accurate, but good enough)
+Added breakdown on pet name in the "show details" dialog.
+Added a logical expression filter to the "show events" in a list dialogs. Press the help button to get the syntax.
+
+1.41
+
+Separated Direct damage and DOT damage in the detailed dialog.
+Added a stub for Spanish language parsing.
+Removed printing of all counts like hits, misses, crits etc in the "All", "Spell totals" and such rows in the detailed dialog since it wasnt very accurate.
+Removed printing of misses, dodges, parries, blocks from periodic damage(DOTs) in the "detailed dialog" since that wasnt very accurate anyway, resists, absorbs reflects are still printed though.
+Removed printing of count fields (hits, crits etc) with 0 to make it easier to see relevant information.
+Added more class parsing strings to the german version.
+Upgraded to the newest version of JFreeChart.
+
+1.40.2
+
+Fixed a bug in percent of total column in damage tables.
+Tweaked some button images in the HTML output.
+
+1.40
+
+Made some major changes to the tables in "Show Details" to make possible more advanced features.
+Added the ability to show graphs and event lists for each row in the "Show Details" dialog (Double click or Select a row and right click for popup menu).
+Added runic power awareness for events.
+Fixed a bug when calculating power events (drain, leech, energize) that pets perform. They were not included but should now be fixed.
+
+1.31.3
+
+Added the ability to customize the main CSS file and then choose it again when making new reports.
+Added class colours to the HTML tables (Thanks Inny).
+
+1.31.2
+
+Added multiple participants in the same graph kind of plots to the HTML export.
+Added the ability to change the size of exported graphs in the HTML export.
+
+1.31
+
+Added the ability to generate some DPS/HPS graphs in the HTML export.
+Added direct damage and healing spells with cast time to the rotation parser by using the damage/healing they do as a trigger.
+
+1.30.2
+
+Fixed a bug with the amount of damage resisted, blocked and absorbed. It should now be correct I hope.
+
+1.30
+
+Added all WOTLK 5 man dungeon bosses to the automatic boss parsing.
+Fixed a few minor bugs.
+
+1.29.3
+
+Added Sartharion, Malygos and Archavon the stone keeper to the automatic boss parsing lists.
+Fixed some performance issues when doing automatic boss fight parsing on Kel'Thuzad and other fights with many add mobs.
+Added PvP vehicles as fight mobs since Archavon has those flags.
+
+1.29.2
+
+Added the ability to load only certain dates from a log file.
+Made it so that Training Dummy's are considered fights. They did not turn up as fights since they are neutral instead of hostile.
+Added a rudimentary Rotation Parser that shows some statistics about skills used. There might be some problems with cast time spells unless Blizzard changed the way the logs treat SPELL_CAST_SUCCESS events. In 2.4 SPELL_CAST_SUCCESS events were not fired when a cast time spell succeeded.
+
+1.29
+
+Fixed Active DPS for pet classes. The pet damage was not included in the active dps time calculation so the active DPS could become too high if the pet damaged a mob when the owner did not.
+Fixed some divide by 0 that created strange symbols.
+Added glancing blows to the detailed Damage tab.
+Added a new extended damage info tab to the detailed dialog that shows all damage related fields. It was added as a separate tab because there are so many fields.
+Added the new fields to the HTML and XML export. The overhealing tag in the XML export was changed due to this. It is now "AmOv".
+
+1.28.3
+
+Changed to the newest version of the tab view scripts for HTML export. Fixed a problem with iexplorer not showing them properly.
+
+1.28.2
+
+Made some more tabs in the participant section of the new HTML export.
+Added the Who heals Whom table to the new HTML export.
+Also fixed a bug where the name of fight victims were distorted when doing HTML export.
+
+1.28
+
+Added a new HTML export (with javascript) that looks a bit better, has tabs for damage/healing/received damage/received healing.
+Tweaked some in the XML export.
+Made some fixes for events in in preparation for WOTLK, for example using the new overhealing field.
+Added spells for the deathknight so that it is recognized in the automatic player class parsing.
+Now catching all errors so that the user gets a hint if something goes wrong.
+Added a new Who heals Whom dialog with fancy colours. Its in the fight right click menu.
+
+1.27.4
+
+Refined the automatic boss parsing by adding NPC ids. Also fixed a few encounters that were strange.
+Added Naxxramas 25 man to the boss parsing.
+Reduced memory usage some.
+Removed the "feature" that started a new fight when a debuff was applied to an NPC. Too many false fights created by Hunters Mark.
+Fixed a bug where the fight victims pets were duplicated.
+
+1.27.3
+
+Fixed a bug with events that appeared twice in some places. This had the effect that some healing and power events were duplicated.
+Added a timer so that fights aren't closed immediately when the victim dies. This removes a few annoying 0 second fights.
+Now adding damage events with no source to fights that are open when it occurs.
+Fixed a bug with the healing bars on the main window.
+
+1.27.2
+
+Fixed a few things with the option "Assign mob pets to the mob".
+Added a received damage tab and a received healing tab to the main window.
+Optimized the overhealing calculations a bit (I think).
+Added environmental damage to the detailed info dialog (probably only shown on received events).
+
+1.27
+
+Separated damage and healing for participants in the main window by using tabs. 
+Also changed the default healing display from raw heal to (raw heal - overheal). New columns for raw heal and overheal as well.
+Fixed a bug where some mind controlled players turned up as fights.
+Fixed a bug in the "show events in a graph" dialog that could make the wrong plot series being affected when checking or unchecking the check boxes.
+
+1.26.4
+
+Added the received healing plot to the arena mode.
+Added fancy color bars to the damage and healing in the participants table.
+Bug fix in received healing plot, events done by the target himself to himself wasn't shown.
+
+1.26.3
+
+Made some changes to support changed events in WOTLK.
+Fixed the dispell and interrupt dialog to once again show broken CCs with the new SPELL_BROKEN event.
+Minor other changes.
+
+1.26.2
+
+Added events that were missing for full compliance to the current log file state in the game.
+Added buffering to the aura graph for better performance when scrolling etc, also added some tooltips.
+Fixed some other minor stuff.
+
+1.26
+
+Added an experimental arena mode, try it out, it can be found in the Tools menu.
+Fixed a bug with dispell and spell steal events, they should now work.
+Added scroll wheel zooming to the graphs.
+Added a new events graph.
+
+1.25.3
+
+Speeded up parsing a LOT by fixing a bad loop that had been in the code for a long time.
+
+1.25.2
+
+Added the ability to change color for the table cells in ShowEventsPanel
+Fixed some problems with the aura dialog.
+Changed so that the aura dialog uses the whole time period from min to max instead of just the events in the fight.
+Made some changes to the healing received plot. Added tooltips with more information and set healthDeficit to 0 on a unit died event so that health deficit calculations doesn't go haywire.
+
+1.25
+
+Added a new dialog that shows a graphical representation of auras that a player gets applied and removed on himself. It can be found by selecting a fight, then selecting a participant and choosing the aura information item from the popup menu.
+Made some changes to the way overhealing and health deficiency works when someone dies. The health deficiency is now set to 0 when someone dies because it is assumed that the person eats to get full health before the next fight starts.
+
+1.24.2
+
+Added health deficiency to the received healing timeline graph.
+
+1.24
+
+Added a raid dps timeline graph to the fights table popup menu that shows raid dps for selected fights in the same graph.
+Added a received healing timeline graph to the participants table popup menu that shows healing done for each healer, and damage done, to a player.
+Removed the qnplot library and now only use JFreeChart.
+Various XML export improvements.
+Made some changes to the overhealing calculations (pretty minor).
+Also various small changes here and there.
+
+1.23
+
+Fixed a bug that could lock up the whole program if a file that is not a log file was chosen.
+Improved one plotting issue that could appear when using log files that spans several days. There might be problems in other graphs as well, haven't checked yet.
+Various fixes and improvements with the XML writer.
+Various performance improvements.
+
+1.22
+
+Improved parsing performance.
+Improved merging performance by a lot.
+Added some more things to the XML files.
+Added a french language option.
+Also various other changes and tweaks.
+If anything is broken after this heavy optimizing, please let me know.
+
+1.21
+
+Worked more on the XML export functions.
+Reduced memory usage by a LOT. Still having some problems with log files that have lots of mobs like Hyjal though.
+Improved parsing speed slightly.
+Reorganized a lot of code to make the project more modular so if you find any bugs please report them on my forums.
+
+1.20.4
+
+Added a german class parsing and boss fights XML info file.
+Also added a setting to choose between the English and German file.
+Added a lot to the XML export function (more to be expected probably)
+
+1.20.3
+
+Reduced memory usage slightly.
+For merged fights there is now a list about which mobs were merged. That info is only shown in the text are in the main window for now but it will be added to other places in future releases.
+Added an export to XML feature (experimental for the moment). I hope that a Javascript app(AJAX) can be developed in the future to show the XML info in a browser.
+
+1.20.2
+
+Fixed a bug where a friendly NPCs summoning a pet started a new fight.
+Optimized some memory usage to make large files easier to read.
+Optimized some code in the automatic boss fight code that made it stall in some cases.
+Thanks Suran for the Hyjal log that allowed me to find these bugs.
+
+1.20
+
+Speeded up the merging of fights greatly. Thanks Burnow for the help.
+
+Changed the way automatic making of boss fights works. There is now a list in an XML file describing the names of all boss events in Karazhan, Zul'aman, Gruuls lair, Magtheridons Lair, Serpentshrine caverns, The eye, Black Temple, Hyjal, Sunwell.
+
+Added a function to the "Show all events dialog" where you can double click an event and get information about it.
+
+1.19.3
+
+Added a progress bar to the make boss fights dialog.
+Fixed a sorting problem in the show all events dialog.
+Added Gruul and Magtheridons lairs to the automatic boss fights thingy in the XML file.
+
+1.19.2
+
+Removed dependence on Java 6 from a few new GUI classes so that MacOSX users can use them. Java 5 should now be enough.
+
+1.19
+
+Added new information to the internal XML file to automatically be able to choose boss mobs in the make boss fights dialog.
+Added filters to the show all events dialog so that the user can view events from a certain source, destination, etc.
+
+1.18.2
+
+Added new functionality to the timeline dialog. The ability to select which participants to plot.
+
+1.18
+
+Added a new dialog to show a timeline of damage and healing for all participants in the same graph.
+Added a new column to the mob spell info dialog that shows the time elapsed since the last time a similar spell event was recorded. In order for an event to be considered a similar event it has to be of the same type, for example SpellCastSuccessEvent and PeriodicSpellDamageEvent for a certain spell is not considered similar events.
+
+1.17
+
+Added a new Spell Info dialog for fights. It shows what spells/skills a mob uses and also a list with all the times it was cast.
+
+Moved the automatic class detection info out into an XML file so it is easier to add new spells and skills to detect on. The XML file is put into the JAR file so a change to it required a new build. 
+
+Also a new feature was added to the automatic class detection, spells can be decribed with their IDs so that other language clients can use it. The information is not added to the XML file yet but I hope someone else can do that :-D
+
+1.16.3
+
+Added progress bars to some functions.
+Some minor changes to other stuff as well.
+
+1.16.2
+
+Fixed some bugs with the new totem detection.
+Fixed some bugs with the boss fights feature.
+
+1.16
+
+Added parsing of totems and also added them to the automatic pet detection so they can be assigned to the shaman who summons them.
+
+1.15
+
+Added a new dialog where boss fights can be made. This feature takes the bosses you select and merge the boss fight with all the other fights that occur at the same time. This is done to get all adds etc merged into the boss fight.
+
+1.14
+
+Added more automatic pet parsing so that mage pets, warlock pets, priest pets etc are recognized (only works if the summon event is recorded).
+Made some additions to the HTML output, thanks Callithrix.
+Added damage shield events.
+
+1.13
+
+Changed some damage, healing and power calculations so that pet events and player events can be calculated separately. Also added that information to the detailed info dialog.
+Added mend pet to automatic pet parsing.
+Fixed a bug that cleared the fight flags preventing a feature from working correctly.
+
+1.12.5
+
+Changed some colors in the html generation. Also changed how some tables look to avoid having the same information in two places.
+
+1.12.4
+
+Added some automatic pet assigning code for hunter pets in the "pet dialog". If the pet gets "Go for the Throat" or gets fed it is automatically assigned to the correct player.
+Added another layer of "crash resistance" in the parsing code.
+
+1.12.3
+
+Fixed so that mind controlled players are not considered a fight target.
+Fixed a bug that occured when something had a comma "," in the name.
+
+1.12.2
+
+Fixed so that the "" are removed from names. It was introduced in the live 2.4 patch.
+More robust error detection so that wrong types of logs does not crash the program. An error message is shown instead.
+Changed so that not only damage events start a fight. Spell aura applied events that are debuffs can now also start fights. This is to enable fights to be started from casting polymorph, shackle, fairie fire, etc etc.
+There is a bug in the live 2.4 patch that makes it so that player deaths are not logged. This prevents the "show events when someone died" dialog to work properly.
+
+1.12
+
+Added a new dialog to show events that happened before someone died. Also added the ability to show interrupts(added to the dispell dialog).
+(Thanks Dinown for the ideas)
+
+1.11
+
+Added the ability to search in the show events dialog.
+
+Added a new option in the participants popup menu (show details on received events). The new option shows the damage/healing and power events that a participant received. This is nice to show how much damage a boss did on a tank for example. It shows all info that the normal details dialog shows, but for the events someone received instead of what they dished out.
+
+Also fixed a few annoying GUI bugs in the dispell dialog.
+
+1.10.4
+
+Added a dispell information dialog. Can view all auras/spells that was dispelled, the time it was dispelled, who dispelled it and from whom it was dispelled.
+
+Added a whole bunch of new events to the parser. Spell cast events(start, failed, success). Aura events (Applied, Dispelled, Removed, Stolen, Dispell Failed). Also the party kill event. Of the new events, only the aura dispelled event can be viewed in any constructive way so far with the new dispell dialog.
+
+Some small changes to the HTML output. A fight list sorted on healing done is also displayed now.
+
+1.10.3
+
+Added active DPS, HPS and PPS for participants. This is for the active time they are doing something. Its calculated by removing periods of time longer than 15 seconds when they are not doing any damage, healing or power events.
+
+Changed the regular DPS calculation for merged fights as well. Before the summed duration of the fights was used, now the merged fight is scanned and the active time for the merged fights is calculated in a similar manner to active time for participants.
+
+Also fixed some bugs when looking at the victims own damage, healing etc.
+
+1.10.2
+
+Fixed a bug when calculating average damage. Added a maximum amount column to the tables. Added crit count and percentages to the healing table. Fixed some class detection bugs.
+
+1.10.1
+
+Fixed so that logs are read as UTF8. That fixes non standard letters to show correctly. Added spell and skill IDs to show in the tables. Added automatic class detection and displays class names in the participant table and in the HTML reports.
+
+1.10
+
+I got hold of some raid logs from the PTR and found a few bugs and inconveniences that I changed.
+
+Added some new fields in the tables, fixed a few calculation bugs for healing spells with both a direct healing component and a HOT component. Added power type to power events that shows if it gives mana, rage, energy etc. Split the damage/healing graph so that a damage graph is shown in the damage tab, a healing graph in the healing tab and a power graph in the power tab. Added a feature so that sorting tables on columns with numbers works as it should.
+
+Maybe some other changes as well that I cannot remember.
+
+1.9
+
+Added more output from the html generation. Added parsing and display of power drain, leech and energize events. Changed the detailed participant information dialog to have a tabs for easier viewing. Fixed a few bugs that I could find. Beautified some code to make it easier to maintain. Fixed so the pet dialog does not require java 6.
+
+1.8.1
+
+Fixed a bug with assigning pets to players (I think).
+
+1.8
+
+Added the ability to generate HTML reports. Also some bug fixes etc
+
+1.7.1
+
+Added the ability to manually assign pets to their owners, automatic assigning will not be done until the live version of the 2.4 patch is out so I can get good logs. Also redid some code in the project so that duplicate code is to a minimum, making it easier to make changes when needed. As usual I hope I didn't break anything :-)
+
+1.6
+
+Added some new functions to the parser, for example the ability to split fights and save the wanted parts to a new log file. Also fixed some issues with duplicate events when merging fights and participants.
+
+1.5.1
+
+Added new options to the right click menu in the fights table. The ability to show what kind of damage and healing a certain mob did(or merged fights) etc. Also did some changes in the parsing code to make it easier to change in the future. I hope I didn't break anything by doing that. Added some new info to the detailed damage list and reordered some columns.
+
+1.4.1
+
+Fixed a bug when merging fights. Sometimes a persons name was changed to "Merged participants" when it shouldn't.
+
+1.4
+
+Added charts to the right click popup menus. Can show pie charts with damage and healing distribution for a fight or merged fights. Can also see pie charts for the distribution of damage and healing for different spells.
+
+Removed the dependency on java 6. It should now work with java 5.
+
+1.3.1
+
+Changed the way DPS is calculated for merged fights. Before the merged fight dps was calculated as the (total damage) / (last event time - first event time) but if there is gaps between fights that will be a strange measure. Now the DPS is calculated as the (total damage) / (the sum of all fight durations).
+
+1.3
+
+Added the ability to merge fights and participants
+
+1.2
+
+First released version, can probably be bugged because of lack of combat logs from the PTR, but works fine with my test logs.

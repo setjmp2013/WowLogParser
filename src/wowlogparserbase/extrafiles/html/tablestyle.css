@@ -1,0 +1,161 @@
+  CAPTION.MYTABLEP
+  {
+     background-color:#000080;
+     color:white;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+  }
+
+  TABLE.MYTABLEP
+  { 
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#B0B000;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+  }
+
+  TH.MYTABLEP
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:5px;
+     padding-right:5px;
+  }
+
+  TR.MYTABLEP
+  { 
+     border-style:hidden;
+  }
+
+  TD.MYTABLEP
+  {  
+     font-size:10pt;
+     background-color:#808000;
+     color:white;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:5px;
+     padding-right:5px;
+  }
+
+
+
+
+  CAPTION.MYTABLEH
+  {
+     background-color:#000080;
+     color:white;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+  }
+
+  TABLE.MYTABLEH
+  { 
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#00B000;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+  }
+
+  TH.MYTABLEH
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:5px;
+     padding-right:5px;
+  }
+
+  TR.MYTABLEH
+  { 
+     border-style:hidden;
+  }
+
+  TD.MYTABLEH
+  {  
+     font-size:10pt;
+     background-color:#008000;
+     color:white;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:5px;
+     padding-right:5px;
+  }
+
+
+
+
+  CAPTION.MYTABLE
+  {
+     background-color:#000080;
+     color:white;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+  }
+
+  TABLE.MYTABLE
+  { 
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#B00000;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+  }
+
+  TH.MYTABLE
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:5px;
+     padding-right:5px;
+  }
+
+  TR.MYTABLE
+  { 
+     border-style:hidden;
+  }
+
+  TD.MYTABLE
+  {  
+     font-size:10pt;
+     background-color:#800000;
+     color:white;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:5px;
+     padding-right:5px;
+  }
+
+  H1,H2,H3,H4
+  {
+     text-align:center;
+  }
+
+  a:link {
+     color:#FFFFFF;
+  }
+  a:visited {
+     color:#FFFFFF;
+  }
+  a:active {
+     color:#FFFFFF;
+  }
+  a:hover {
+     color:#AAAAAA;
+  }

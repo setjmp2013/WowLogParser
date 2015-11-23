@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : ClassParsing.xml
+    Created on : den 19 april 2008, 16:30
+    Author     : racy
+    Description:
+        Purpose of the document follows.
+-->
+<root>
+    <spell name="Connexion" nameEn="Life Tap"/>
+    <spell name="Rage sanguinaire" nameEn="Bloodrage"/>
+    <class name="Inconnu" nameEn="Unknown">
+        <spellstrings></spellstrings>
+        <spellids></spellids>
+    </class>
+    <class name="Druide" nameEn="Druid">
+        <spellstrings>"lambeau", "toucher guérisseur", "mutiler", feu stellaire", "déchirure", "renaissance", "	eclat lunaire", "récupération", "griffe", "mutilation"</spellstrings>
+        <spellids>33983, 24248, 27008, 27002, 33987, 26996, 26982</spellids>
+		<!-- example spell ids: mangle(cat), ferocious bite, rip, shred, mangle(bear), maul, rejuvenation -->
+    </class>
+    <class name="Voleur" nameEn="Rogue">
+        <spellstrings>"mutilate", "attaque sournoise", "ambush", "poison mortel", "attaque pernicieuse", "garrot", "kriss", "rupture", "suriner"</spellstrings>
+        <spellids>34419, 34418, 26865, 27441, 27187, 26862, 26861</spellids>
+    </class>
+    <class name="Guerrier" nameEn="Warrior">
+        <spellstrings>"cri de guerre", "exécution", "dévaster", "heurt de bouclier", "pourfendre", "coup de tonnerre", "fracasser armure", "shield slam", "devastate", "vengeance"</spellstrings>
+        <spellids>469, 20243, 30357, 23602, 23922, 2687, 355, 12809</spellids>
+    </class>
+    <class name="Chasseur" nameEn="Hunter">
+        <spellstrings>"tir des arcanes", "tir automatique", "tir assuré", "flèches multiples", "guérison du familier","visée"</spellstrings>
+        <spellids>75, 34120, 27016, 27019, 27065, 14268, 19574, 14325</spellids>
+    </class>
+    <class name="Mage" nameEn="Mage">
+        <spellstrings>"vague explosive", "trait de feu", "javelot de glace", "brûlure", "eclair de givre ", "nova de givre", "boule de feu", "projectiles des arcanes"</spellstrings>
+        <spellids>27070, 12654, 29077, 27088, 29077, 33938</spellids>
+    </class>
+    <class name="Démoniste" nameEn="Warlock">
+        <spellstrings>"siphon de vie", "graine de corruption", "douleur brûlante", "incinérer", "corruption", "brûlure de l'ombre", "affliction instable", "trait de l'ombre", "immolate", "malédiction funeste", "pacte noir"</spellstrings>
+        <spellids>18265, 27209 , 27218, 27216</spellids>
+    </class>
+    <class name="Chaman" nameEn="Shaman">
+        <spellstrings>"bouclier de foudre", "horion de flammes", "chaîne d'éclairs", "horion de terre", "Salve de guérison", "flame shock", "vague de soins", "eclair"</spellstrings>
+        <spellids>25454, 25442, 25449, 25420, 25423, 25457, 25396, 25464</spellids>
+    </class>
+    <class name="Prêtre" nameEn="Priest">
+        <spellstrings>"rénovation", "réaction", "mind blast", "toucher vampirique", "Châtiment", "Soins supérieurs", "Soins rapides"</spellstrings>
+        <spellids>25213, 25389, 25312 , 25433, 25235, 25222, 10955</spellids>
+    </class>
+    <class name="Paladin" nameEn="Paladin">
+        <spellstrings>"lumière sacrée", "horion sacré", "consécration", "sceau de lumière", "eclair lumineux", "courroux vengeur", "concecration", "marteau de courroux"</spellstrings>
+        <spellids>19940, 20272, 35216, 27137, 35212, 25312, 10308, 35223</spellids>
+    </class>
+    <class name="Death knight" nameEn="Deathknight">
+        <spellstrings/>
+        <spellids/>
+    </class>
+    <boss encounter="Attumen le Veneur" instance="Karazhan">
+        <mob name="Attumen le Veneur" id="16152" boss="true"/>
+        <mob name="Minuit" id="16151"/>
+    </boss>
+    <boss encounter="Moroes" instance="Karazhan">
+        <mob name="Moroes" id="15687" boss="true"/>
+    </boss>
+    <boss encounter="Damoiselle de vertu" instance="Karazhan">
+        <mob name="Damoiselle de vertu" id="16457" boss="true"/>
+    </boss>
+    <boss encounter="Le Grand Méchant Loup" instance="Karazhan">
+        <mob name="Le Grand Méchant Loup" id="17521" boss="true"/>
+    </boss>
+    <boss encounter="Romulo et Julianne" instance="Karazhan">
+        <mob name="Romulo" id="17533" boss="true"/>
+        <mob name="Julianne" id="17534" boss="true"/>
+    </boss>
+    <boss encounter="Magicien D'Oz" instance="Karazhan">
+        <mob name="Dorothée" id="17535"/>
+        <mob name="Graou" id="17546"/>
+        <mob name="Homme de paille" id="17543"/>
+        <mob name="Tête de fer-blanc" id="17547"/>
+        <mob name="Tito" id="17548"/>
+        <mob name="La Mégère" id="18168" boss="true"/>
+    </boss>
+    <boss encounter="Plaie-de-nuit" instance="Karazhan">
+        <mob name="Plaie-de-nuit" id="17225" boss="true"/>
+    </boss>
+    <boss encounter="Ombre d'Aran" instance="Karazhan">
+        <mob name="Ombre d'Aran" id="16524" boss="true"/>
+    </boss>
+    <boss encounter="Le conservateur" instance="Karazhan">
+        <mob name="Le conservateur" id="15691" boss="true"/>
+    </boss>
+    <boss encounter="Terestian Malsabot" instance="Karazhan">
+        <mob name="Terestian Malsabot" id="15688" boss="true"/>
+    </boss>
+    <boss encounter="Dedain-du-Neant" instance="Karazhan">
+        <mob name="Dédain-du-Néant" id="15689" boss="true"/>
+    </boss>
+    <boss encounter="Prince Malchezaar" instance="Karazhan">
+        <mob name="Prince Malchezaar" id="15690" boss="true"/>
+        <mob name="Haches du prince Malchezaar" id="17650"/>
+    </boss>
+
+    <boss encounter="Gruul le Tue-dragon" instance="Repaire de Gruul">
+        <mob name="Gruul le Tue-dragon" id="19044" boss="true"/>
+    </boss>
+    <boss encounter="Haut Roi Maulgar" instance="Repaire de Gruul">
+        <mob name="Haut Roi Maulgar" id="18831" boss="true"/>
+        <mob name="Kiggler le Cinglé" id="18835"/>
+        <mob name="Oeillaveugle le Voyant" id="18836"/>
+        <mob name="Olm l'Invocateur" id="18834"/>
+        <mob name="Krosh Brasemain" id="18832"/>
+    </boss>
+    <boss encounter="Magtheridon" instance="Repaire de Magtheridon">
+        <mob name="Canaliste des Flammes infernales" id="17256"/>
+        <mob name="Magtheridon" id="17257" boss="true"/>
+    </boss>
+    <boss encounter="Seigneur des Fonds Karathress" instance="La caverne du sanctuaire du serpent">
+        <mob name="Seigneur des fonds Karathress" id="21214" boss="true"/>
+        <mob name="Garde-fonds Caribdis" id="21964" boss="true"/>
+        <mob name="Garde-fonds Squallis" id="21966" boss="true"/>
+        <mob name="Garde-fonds Marevess" id="21965" boss="true"/>
+    </boss>
+    <boss encounter="Hydross l'Instable" instance="La caverne du sanctuaire du serpent">
+        <mob name="Hydross l'Instable" id="21216" boss="true"/>
+        <mob name="Pur rejeton d'Hydross" id="22035"/>
+        <mob name="Rejeton d'Hydross souillé" id="22036"/>
+    </boss>
+    <boss encounter="Dame Vashj" instance="La caverne du sanctuaire du serpent">
+        <mob name="Dame Vashj" id="21212" boss="true"/>
+    </boss>
+    <boss encounter="Leotheras l'Aveugle" instance="La caverne du sanctuaire du serpent">
+        <mob name="Leotheras l'Aveugle" id="21215" boss="true"/>
+    </boss>
+    <boss encounter="Morogrim Marcheur des flots" instance="La caverne du sanctuaire du serpent">
+        <mob name="Morogrim Marcheur-des-flots" id="21213" boss="true"/>
+    </boss>
+    <boss encounter="Le Rodeur d'En bas" instance="La caverne du sanctuaire du serpent">
+        <mob name="Le Rôdeur d'En bas" id="21217" boss="true"/>
+    </boss>
+    <boss encounter="A'lar" instance="L'Oeil de la Tempête">
+        <mob name="Al'ar" id="19514" boss="true"/>
+    </boss>
+    <boss encounter="Grande Astromancienne Solarian" instance="L'Oeil de la Tempête">
+        <mob name="Grande astromancienne Solarian" id="18805" boss="true"/>
+    </boss>
+    <boss encounter="Kael'Thas Haut Soleil " instance="L'Oeil de la Tempête">
+        <mob name="Kael'thas Haut-soleil" id="19622" boss="true"/>
+        <mob name="Thaladred l'Assombrisseur" id="20064"/>
+        <mob name="Seigneur Sanguinar" id="20060"/>
+        <mob name="Grande astromancienne Capernian" id="20062"/>
+        <mob name="Maître ingénieur Telonicus" id="20063"/>
+        <mob name="Dévastation" id="21269"/>
+        <mob name="Tranchoir dimensionnel" id="21272"/>
+        <mob name="Bâton de désintégration" id="21274"/>
+        <mob name="Rempart de déphasage" id="21273"/>
+        <mob name="Arc long brins-de-Néant" id="21268"/>
+        <mob name="Lames d'infinité" id="21271"/>
+        <mob name="Masse d'infusion cosmique" id="21270"/>
+    </boss>
+    <boss encounter="Le Saccageur du vide" instance="L'Oeil de la Tempête">
+        <mob name="Saccageur du Vide" id="19516" boss="true"/>
+    </boss>
+    <boss encounter="Anetheron" instance="Sommet d'Hyjal">
+        <mob name="Anetheron" id="17808" boss="true"/>
+    </boss>
+    <boss encounter="Archimonde" instance="Sommet d'Hyjal">
+        <mob name="Archimonde" id="17968" boss="true"/>
+    </boss>
+    <boss encounter="Azgalor" instance="Sommet d'Hyjal">
+        <mob name="Azgalor" id="17842" boss="true"/>
+    </boss>
+    <boss encounter="Kaz'rogal" instance="Sommet d'Hyjal">
+        <mob name="Kaz'rogal" id="17888" boss="true"/>
+    </boss>
+    <boss encounter="Rage Froidhiver" instance="Sommet d'Hyjal">
+        <mob name="Rage Froidhiver" id="17767" boss="true"/>
+    </boss>
+    <boss encounter="Grand Seigneur de guerre Naj'entus" instance="Le temple Noir">
+        <mob name="Grand seigneur de guerre Naj'entus" id="22887" boss="true"/>
+    </boss>
+    <boss encounter="Supremus" instance="Le temple Noir">
+        <mob name="Supremus" id="22898" boss="true"/>
+        <mob name="Volcan Supremus" id="23085"/>
+    </boss>
+    <boss encounter="Ombre d'Akama" instance="Le temple Noir">
+        <mob name="Ombre d'Akama" id="22841" boss="true"/>
+    </boss>
+    <boss encounter="Teron Fielsang" instance="Le temple Noir">
+        <mob name="Teron Fielsang" id="22871" boss="true"/>
+    </boss>
+    <boss encounter="Gurtogg Fiévresang" instance="Le temple Noir">
+        <mob name="Gurtogg Fièvresang" id="22948" boss="true"/>
+    </boss>
+    <boss encounter="Reliquaire des Ames" instance="Le temple Noir">
+        <mob name="Essence de la colère" id="23420" boss="true"/>
+        <mob name="Essence du désir" id="23419" boss="true"/>
+        <mob name="Essence de la souffrance" id="23418" boss="true"/>
+    </boss>
+    <boss encounter="Mére Shahraz" instance="Le temple Noir">
+        <mob name="Mère Shahraz" id="22947" boss="true"/>
+    </boss>
+    <boss encounter="Conseil Illidari" instance="Le temple Noir">
+        <mob name="Gathios le Briseur" id="22949" boss="true"/>
+        <mob name="Grand néantomancien Zerevor" id="22950" boss="true"/>
+        <mob name="Dame Malande" id="22951" boss="true"/>
+        <mob name="Veras Ombrenoir" id="22952" boss="true"/>
+    </boss>
+    <boss encounter="Illidan Hurlorage" instance="Le temple Noir">
+        <mob name="Illidan Hurlorage" id="22917" boss="true"/>
+    </boss>
+    <boss encounter="Brutallus" instance="Plateau du Puits de soleil">
+        <mob name="Brutallus" id="24882" boss="true"/>
+    </boss>
+    <boss encounter="Gangrebrume" instance="Plateau du Puits de soleil">
+        <mob name="Gangrebrume" id="25038" boss="true"/>
+    </boss>
+    <boss encounter="Eredar jumeaux" instance="Plateau du Puits de soleil">
+        <mob name="Grande démoniste Alythess" id="25166" boss="true"/>
+        <mob name="Dame Sacrocingle" id="25165" boss="true"/>
+    </boss>
+    <boss encounter="Kalecgos" instance="Plateau du Puits de soleil">
+        <mob name="Kalecgos" id="24850" boss="true"/>
+        <mob name="Sathrovarr le Corrupteur" id="24892" boss="true"/>
+    </boss>
+    <boss encounter="M'uru" instance="Plateau du Puits de soleil">
+        <mob name="M'uru" id="25741" boss="true"/>
+        <mob name="Entropius" id="25840"/>
+    </boss>
+    <boss encounter="Anub'Rekhan" instance="Naxxramas 25">
+        <mob name="Anub'Rekhan" id="15956" boss="true"/>
+    </boss>
+    <boss encounter="Grande veuve Faerlina" instance="Naxxramas 25">
+        <mob name="Grande veuve Faerlina" id="15953" boss="true"/>
+    </boss>
+    <boss encounter="Maexxna" instance="Naxxramas 25">
+        <mob name="Maexxna" id="15952" boss="true"/>
+    </boss>
+    <boss encounter="Le Recousu" instance="Naxxramas 25">
+        <mob name="Le Recousu" id="16028" boss="true"/>
+    </boss>
+    <boss encounter="Grobbulus" instance="Naxxramas 25">
+        <mob name="Grobbulus" id="15931" boss="true"/>
+    </boss>
+    <boss encounter="Gluth" instance="Naxxramas 25">
+        <mob name="Gluth" id="15932" boss="true"/>
+    </boss>
+    <boss encounter="Thaddius" instance="Naxxramas 25">
+        <mob name="Thaddius" id="15928" boss="true"/>
+        <mob name="Stalagg" id="15929"/>
+        <mob name="Feugen" id="15930"/>
+    </boss>
+    <boss encounter="Instructeur Razuvious" instance="Naxxramas 25">
+        <mob name="Instructeur Razuvious" id="16061" boss="true"/>
+    </boss>
+    <boss encounter="Gothik le Moissonneur" instance="Naxxramas 25">
+        <mob name="Gothik le Moissonneur" id="16060" boss="true"/>
+        <mob name="Unrelenting Trainee" id="16124"/>
+        <mob name="Unrelenting Death Knight" id="16125"/>
+        <mob name="Unrelenting Rider" id="16126"/>
+        <mob name="Spectral Trainee" id="16127"/>
+        <mob name="Spectral Rider" id="16150"/>
+        <mob name="Spectral Horse" id="16149"/>
+    </boss>
+    <boss encounter="Les quatre cavaliers" instance="Naxxramas 25">
+        <mob name="Thane Korth'azz" id="16064" boss="true"/>
+        <mob name="Dame Blaumeux" id="16065" boss="true"/>
+        <mob name="Généralissime Mograine" id="16062" boss="true"/>
+        <mob name="Sire Zeliek" id="16063" boss="true"/>
+    </boss>
+    <boss encounter="Noth le Porte-peste" instance="Naxxramas 25">
+        <mob name="Noth le Porte-peste" id="15954" boss="true"/>
+    </boss>
+    <boss encounter="Heigan l'Impur" instance="Naxxramas 25">
+        <mob name="Heigan l'Impur" id="15936" boss="true"/>
+    </boss>
+    <boss encounter="Horreb" instance="Naxxramas 25">
+        <mob name="Horreb" id="16011" boss="true"/>
+    </boss>
+    <boss encounter="Sapphiron" instance="Naxxramas 25">
+        <mob name="Saphiron" id="15989" boss="true"/>
+    </boss>
+    <boss encounter="Kel'Thuzad" instance="Naxxramas 25">
+        <mob name="Kel'Thuzad" id="15990" boss="true"/>
+        <mob name="Soldat des terres gelées" id="23561"/>
+        <mob name="Soldat des terres gelées" id="16427"/>
+        <mob name="Abomination irrésistible" id="16428"/>
+        <mob name="Tisseur d'âme" id="16429"/>
+    </boss>
+    <boss encounter="Archavon le Gardien des pierres" instance="">
+        <mob name="Archavon le Gardien des pierres" id="31125" boss="true"/>
+    </boss>
+    <boss encounter="Malygos" instance="">
+        <mob name="Malygos" id="28859" boss="true"/>
+    </boss>
+    <boss encounter="Sartharion" instance="">
+        <mob name="Sartharion" id="28860" boss="true"/>
+    </boss>
+
+    <boss encounter="Ancien Nadox" instance="">
+        <mob name="Ancien Nadox" id="29309" boss="true"/>
+    </boss>
+
+    <boss encounter="Anomalus" instance="">
+        <mob name="Anomalus" id="26763" boss="true"/>
+    </boss>
+
+    <boss encounter="Anub'arak" instance="">
+        <mob name="Anub'arak" id="29120" boss="true"/>
+    </boss>
+
+    <boss encounter="Chronoseigneur Epoch" instance="">
+        <mob name="Chronoseigneur Epoch" id="26532" boss="true"/>
+    </boss>
+
+    <boss encounter="Colosse drakkari" instance="">
+        <mob name="Colosse drakkari" id="29307" boss="true"/>
+    </boss>
+
+    <boss encounter="Cyanigosa" instance="">
+        <mob name="Cyanigosa" id="31134" boss="true"/>
+    </boss>
+
+    <boss encounter="Damoiselle de peine" instance="">
+        <mob name="Damoiselle de peine" id="27975" boss="true"/>
+    </boss>
+
+    <boss encounter="Drakos l'Interrogateur" instance="">
+        <mob name="Drakos l'Interrogateur" id="27654" boss="true"/>
+    </boss>
+
+    <boss encounter="Eck le Féroce" instance="">
+        <mob name="Eck le Féroce" id="29932" boss="true"/>
+    </boss>
+
+    <boss encounter="Erekem" instance="">
+        <mob name="Erekem" id="29315" boss="true"/>
+    </boss>
+
+    <boss encounter="Gal'darah" instance="">
+        <mob name="Gal'darah" id="29306" boss="true"/>
+    </boss>
+
+    <boss encounter="Gardien-tellurique Eregos" instance="">
+        <mob name="Gardien-tellurique Eregos" id="27656" boss="true"/>
+    </boss>
+
+    <boss encounter="Général Bjarngrim" instance="">
+        <mob name="Général Bjarngrim" id="28586" boss="true"/>
+    </boss>
+
+    <boss encounter="Gortok Pâle-sabot" instance="">
+        <mob name="Gortok Pâle-sabot" id="26687" boss="true"/>
+    </boss>
+
+    <boss encounter="Grancrochet" instance="">
+        <mob name="Grancrochet" id="26529" boss="true"/>
+    </boss>
+
+    <boss encounter="Grand magus Telestra" instance="">
+        <mob name="Grand magus Telestra" id="26731" boss="true"/>
+    </boss>
+
+    <boss encounter="Hadronox" instance="">
+        <mob name="Hadronox" id="28921" boss="true"/>
+    </boss>
+
+    <boss encounter="Héraut Volazj" instance="">
+        <mob name="Héraut Volazj" id="29311" boss="true"/>
+    </boss>
+
+    <boss encounter="Ichoron" instance="">
+        <mob name="Ichoron" id="29313" boss="true"/>
+    </boss>
+
+    <boss encounter="Ingvar le Pilleur" instance="">
+        <mob name="Ingvar le Pilleur" id="23954" boss="true"/>
+    </boss>
+
+    <boss encounter="Ionar" instance="">
+        <mob name="Ionar" id="28546" boss="true"/>
+    </boss>
+
+    <boss encounter="Jedoga Cherchelombre" instance="">
+        <mob name="Jedoga Cherchelombre" id="29310" boss="true"/>
+    </boss>
+
+    <boss encounter="Keristrasza" instance="">
+        <mob name="Keristrasza" id="26723" boss="true"/>
+    </boss>
+
+    <boss encounter="Krik'thir le Gardien de porte" instance="">
+        <mob name="Krik'thir le Gardien de porte" id="28684" boss="true"/>
+    </boss>
+
+    <boss encounter="Krystallus" instance="">
+        <mob name="Krystallus" id="27977" boss="true"/>
+    </boss>
+
+    <boss encounter="Lavanthor" instance="">
+        <mob name="Lavanthor" id="29312" boss="true"/>
+    </boss>
+
+    <boss encounter="Le prophète Tharon'ja" instance="">
+        <mob name="Le prophète Tharon'ja" id="26632" boss="true"/>
+    </boss>
+
+    <boss encounter="Loken" instance="">
+        <mob name="Loken" id="28923" boss="true"/>
+    </boss>
+
+    <boss encounter="Mal'Ganis" instance="">
+        <mob name="Mal'Ganis" id="26533" boss="true"/>
+    </boss>
+
+    <boss encounter="Moorabi" instance="">
+        <mob name="Moorabi" id="29305" boss="true"/>
+    </boss>
+
+    <boss encounter="Moragg" instance="">
+        <mob name="Moragg" id="29316" boss="true"/>
+    </boss>
+
+    <boss encounter="Novos l'Invocateur" instance="">
+        <mob name="Novos l'Invocateur" id="26631" boss="true"/>
+    </boss>
+
+    <boss encounter="Ormorok le Sculpte-arbre" instance="">
+        <mob name="Ormorok le Sculpte-arbre" id="26794" boss="true"/>
+    </boss>
+
+    <boss encounter="Prince Keleseth" instance="">
+        <mob name="Prince Keleseth" id="23953" boss="true"/>
+    </boss>
+
+    <boss encounter="Prince Taldaram" instance="">
+        <mob name="Prince Taldaram" id="29308" boss="true"/>
+    </boss>
+
+    <boss encounter="Roi Dred" instance="">
+        <mob name="Roi Dred" id="27483" boss="true"/>
+    </boss>
+
+    <boss encounter="Roi Ymiron" instance="">
+        <mob name="Roi Ymiron" id="26861" boss="true"/>
+    </boss>
+
+    <boss encounter="Salramm le Façonneur de chair" instance="">
+        <mob name="Salramm le Façonneur de chair" id="26530" boss="true"/>
+    </boss>
+
+    <boss encounter="Seigneur-mage Urom" instance="">
+        <mob name="Seigneur-mage Urom" id="27655" boss="true"/>
+    </boss>
+
+    <boss encounter="Sjonnir le Sculptefer" instance="">
+        <mob name="Sjonnir le Sculptefer" id="27978" boss="true"/>
+    </boss>
+
+    <boss encounter="Skadi le Brutal" instance="">
+        <mob name="Skadi le Brutal" id="26693" boss="true"/>
+    </boss>
+
+    <boss encounter="Skarvald et Dalronn" instance="">
+        <mob name="Skarvald le Constructeur" id="24200" boss="true"/>
+        <mob name="Dalronn le Contrôleur" id="24201" boss="true"/>
+    </boss>
+
+    <boss encounter="Slad'ran" instance="">
+        <mob name="Slad'ran" id="29304" boss="true"/>
+    </boss>
+
+    <boss encounter="Svala Tristetombe" instance="">
+        <mob name="Svala Tristetombe" id="26668" boss="true"/>
+    </boss>
+
+    <boss encounter="Trollétripe" instance="">
+        <mob name="Trollétripe" id="26630" boss="true"/>
+    </boss>
+
+    <boss encounter="Varos Arpentenuée" instance="">
+        <mob name="Varos Arpentenuée" id="27447" boss="true"/>
+    </boss>
+
+    <boss encounter="Volkhan" instance="">
+        <mob name="Volkhan" id="28587" boss="true"/>
+    </boss>
+
+    <boss encounter="Xevozz" instance="">
+        <mob name="Xevozz" id="29266" boss="true"/>
+    </boss>
+
+    <boss encounter="Zuramat l'Oblitérateur" instance="">
+        <mob name="Zuramat l'Oblitérateur" id="29314" boss="true"/>
+    </boss>
+
+    <boss encounter="Flame Leviathan" instance="Ulduar">
+        <mob name="Flame Leviathan" id="33113" boss="true"/>
+    </boss>
+    <boss encounter="Razorscale" instance="Ulduar">
+        <mob name="Razorscale" id="33186" boss="true"/>
+    </boss>
+    <boss encounter="XT-002 Deconstructor" instance="Ulduar">
+        <mob name="XT-002 Deconstructor" id="33293" boss="true"/>
+        <mob name="Heart of the Deconstructor" id="33329"/>
+        <mob name="XM-024 Pummeller" id="33344"/>
+        <mob name="XS-013 Scrapbot" id="33343"/>
+    </boss>
+    <boss encounter="Ignis the Furnace Master" instance="Ulduar">
+        <mob name="Ignis the Furnace Master" id="33118" boss="true"/>
+        <mob name="Iron Construct" id="33121"/>
+        <mob name="Scorch" id="33221"/>
+    </boss>
+    <boss encounter="The Assembly of Iron" instance="Ulduar">
+        <mob name="Steelbreaker" id="32867" boss="true"/>
+        <mob name="Stormcaller Brundir" id="32857" boss="true"/>
+        <mob name="Runemaster Molgeim" id="32927" boss="true"/>
+    </boss>
+    <boss encounter="Kologarn" instance="Ulduar">
+        <mob name="Kologarn" id="32930" boss="true"/>
+        <mob name="Left Arm" id="32933"/>
+        <mob name="Right Arm" id="32934"/>
+    </boss>
+    <boss encounter="Auriaya" instance="Ulduar">
+        <mob name="Auriaya" id="33515" boss="true"/>
+        <mob name="Feral Defender" id="34035"/>
+        <mob name="Sanctum Sentry" id="34014"/>
+    </boss>
+    <boss encounter="Mimiron" instance="Ulduar" maxidletime="50">
+        <mob name="Mimiron" id="33412" boss="true"/>
+        <mob name="Leviathan Mk II" id="34071"/>
+        <mob name="VX-001" id="33651"/>
+        <mob name="Aerial Command Unit" id="33670"/>
+        <mob name="Assault Bot" id="34057"/>
+        <mob name="Bomb Bot" id="33836"/>
+    </boss>
+    <boss encounter="Hodir" instance="Ulduar">
+        <mob name="Hodir" id="32845" boss="true"/>
+    </boss>
+    <boss encounter="Thorim" instance="Ulduar">
+        <mob name="Thorim" id="32865" boss="true"/>
+    </boss>
+    <boss encounter="Freya" instance="Ulduar">
+        <mob name="Freya" id="32906" boss="true"/>
+    </boss>
+    <boss encounter="General Vezax" instance="Ulduar">
+        <mob name="General Vezax" id="33271" boss="true"/>
+    </boss>
+    <boss encounter="Yogg-Saron" instance="Ulduar">
+        <mob name="Yogg-Saron" id="33288" boss="true"/>
+        <mob name="Guardian of Yogg-Saron" id="33136" boss="false"/>
+        <mob name="Brain of Yogg-Saron" id="33890" boss="false"/>
+        <mob name="Constrictor Tentacle" id="33983" boss="false"/>
+        <mob name="Corruptor Tentacle" id="33985" boss="false"/>
+        <mob name="Crusher Tentacle" id="33966" boss="false"/>
+        <mob name="Laughing Skull" id="33990" boss="false"/>
+    </boss>
+    <boss encounter="Algalon the Observer" instance="Ulduar">
+        <mob name="Algalon the Observer" id="32871" boss="true"/>
+    </boss>
+
+    <boss encounter="Emalon the Storm Watcher" instance="Vault of Archavon">
+        <mob name="Emalon the Storm Watcher" id="33993" boss="true"/>
+    </boss>
+    <boss encounter="Koralon the Flame Watcher" instance="Vault of Archavon">
+        <mob name="Koralon the Flame Watcher" id="35013" boss="true"/>
+    </boss>
+
+    <boss encounter="The Northrend Beasts" instance="Trial of the Crusader">
+        <mob name="Gormok the Impaler" id="34796" boss="true"/>
+        <mob name="Acidmaw" id="35144" boss="true"/>
+        <mob name="Dreadscale" id="34799" boss="true"/>
+        <mob name="Icehowl" id="34797" boss="true"/>
+    </boss>
+    <boss encounter="Lord Jaraxxus" instance="Trial of the Crusader">
+        <mob name="Lord Jaraxxus" id="34780" boss="true"/>
+    </boss>
+    <boss encounter="Faction Champions" instance="Trial of the Crusader">
+        <mob name="" id="34461" boss="false"/>
+        <mob name="" id="34460" boss="false"/>
+        <mob name="" id="34469" boss="false"/>
+        <mob name="" id="34467" boss="false"/>
+        <mob name="" id="34468" boss="false"/>
+        <mob name="" id="34465" boss="false"/>
+        <mob name="" id="34471" boss="false"/>
+        <mob name="" id="34466" boss="false"/>
+        <mob name="" id="34473" boss="false"/>
+        <mob name="" id="34472" boss="false"/>
+        <mob name="" id="34463" boss="false"/>
+        <mob name="" id="34470" boss="false"/>
+        <mob name="" id="34474" boss="false"/>
+        <mob name="" id="34475" boss="false"/>
+        <mob name="" id="34458" boss="false"/>
+        <mob name="" id="34451" boss="false"/>
+        <mob name="" id="34459" boss="false"/>
+        <mob name="" id="34448" boss="false"/>
+        <mob name="" id="34449" boss="false"/>
+        <mob name="" id="34445" boss="false"/>
+        <mob name="" id="34456" boss="false"/>
+        <mob name="" id="34447" boss="false"/>
+        <mob name="" id="34441" boss="false"/>
+        <mob name="" id="34454" boss="false"/>
+        <mob name="" id="34455" boss="false"/>
+        <mob name="" id="34444" boss="false"/>
+        <mob name="" id="34450" boss="false"/>
+        <mob name="" id="34453" boss="false"/>
+    </boss>
+    <boss encounter="Twin Val'kyr" instance="Trial of the Crusader">
+        <mob name="Fjola Lightbane" id="34497" boss="true"/>
+        <mob name="Eydis Darkbane" id="34496" boss="true"/>
+    </boss>
+    <boss encounter="Anub'arak" instance="Trial of the Crusader">
+        <mob name="Anub'arak" id="34564" boss="true"/>
+    </boss>
+
+    <boss encounter="Grand Champions" instance="Trial of the Champion">
+        <mob name="" id="34705" boss="false"/>
+        <mob name="" id="34702" boss="false"/>
+        <mob name="" id="34701" boss="false"/>
+        <mob name="" id="34657" boss="false"/>
+        <mob name="" id="34703" boss="false"/>
+        <mob name="" id="35572" boss="false"/>
+        <mob name="" id="35569" boss="false"/>
+        <mob name="" id="35571" boss="false"/>
+        <mob name="" id="35570" boss="false"/>
+        <mob name="" id="35617" boss="false"/>
+    </boss>
+    <boss encounter="Eadric the Pure" instance="Trial of the Champion">
+        <mob name="Eadric the Pure" id="35119" boss="true"/>
+    </boss>
+    <boss encounter="Argent Confessor Paletress" instance="Trial of the Champion">
+        <mob name="Argent Confessor Paletress" id="34928" boss="true"/>
+    </boss>
+    <boss encounter="The Black Knight" instance="Trial of the Champion">
+        <mob name="The Black Knight" id="35451" boss="true"/>
+    </boss>
+
+    <boss encounter="Onyxia" instance="Onyxia's Lair">
+        <mob name="Onyxia" id="10184" boss="true"/>
+    </boss>
+
+    <boss encounter="Forgemaster Garfrost" instance="Pit of Saron">
+        <mob name="Forgemaster Garfrost" id="36494" boss="true"/>
+    </boss>
+    <boss encounter="Ick" instance="Pit of Saron">
+        <mob name="Ick" id="36476" boss="true"/>
+    </boss>
+    <boss encounter="Scourgelord Tyrannus" instance="Pit of Saron">
+        <mob name="Scourgelord Tyrannus" id="36658" boss="true"/>
+    </boss>
+
+    <boss encounter="Bronjahm" instance="The Forge of Souls">
+        <mob name="Bronjahm" id="36497" boss="true"/>
+    </boss>
+    <boss encounter="Devourer of Souls" instance="The Forge of Souls">
+        <mob name="Devourer of Souls" id="36502" boss="true"/>
+    </boss>
+
+    <boss encounter="Falric" instance="Halls of Reflection">
+        <mob name="Falric" id="38112" boss="true"/>
+    </boss>
+    <boss encounter="Marwyn" instance="Halls of Reflection">
+        <mob name="Marwyn" id="38113" boss="true"/>
+    </boss>
+    <boss encounter="The Lich King" instance="Halls of Reflection">
+        <mob name="The Lich King" id="37226" boss="false"/>
+        <mob name="Raging Ghoul" id="36940" boss="false"/>
+        <mob name="Risen Witch Doctor" id="36941" boss="false"/>
+        <mob name="Lumbering Abomination" id="37069" boss="false"/>
+    </boss>
+
+    <boss encounter="Lord Marrowgar" instance="Icecrown Citadel">
+        <mob name="Lord Marrowgar" id="36612" boss="true"/>
+    </boss>
+    <boss encounter="Lady Deathwhisper" instance="Icecrown Citadel">
+        <mob name="Lady Deathwhisper" id="36855" boss="true"/>
+    </boss>
+    <boss encounter="Deathbringer Saurfang" instance="Icecrown Citadel">
+        <mob name="Deathbringer Saurfang" id="37813" boss="true"/>
+    </boss>
+    <boss encounter="Festergut" instance="Icecrown Citadel">
+        <mob name="Festergut" id="36626" boss="true"/>
+    </boss>
+    <boss encounter="Rotface" instance="Icecrown Citadel">
+        <mob name="Rotface" id="36627" boss="true"/>
+    </boss>
+    <boss encounter="Professor Putricide" instance="Icecrown Citadel">
+        <mob name="Professor Putricide" id="36678" boss="true"/>
+    </boss>
+    <boss encounter="Blood Prince Council" instance="Icecrown Citadel">
+        <mob name="Prince Keleseth" id="37972" boss="true"/>
+        <mob name="Prince Taldaram" id="37973" boss="true"/>
+        <mob name="Prince Valanar" id="37970" boss="true"/>
+    </boss>
+    <boss encounter="Blood-Queen Lana'thel" instance="Icecrown Citadel">
+        <mob name="Blood-Queen Lana'thel" id="37955" boss="true"/>
+    </boss>
+    <boss encounter="Valithria Dreamwalker" instance="Icecrown Citadel">
+        <mob name="Valithria Dreamwalker" id="36789" boss="false"/>
+        <mob name="Risen Archmage" id="37868" boss="false"/>
+        <mob name="Blazing Skeleton" id="36791" boss="false"/>
+        <mob name="Blistering Zombie" id="37934" boss="false"/>
+        <mob name="Gluttonous Abomination" id="37886" boss="false"/>
+        <mob name="Suppresser" id="37863" boss="false"/>
+    </boss>
+    <boss encounter="Sindragosa" instance="Icecrown Citadel">
+        <mob name="Sindragosa" id="36853" boss="true"/>
+    </boss>
+    <boss encounter="The Lich King" instance="Icecrown Citadel">
+        <mob name="The Lich King" id="36597" boss="true"/>
+    </boss>
+    <boss encounter="Saviana Ragefire" instance="The Ruby Sanctum">
+        <mob name="Saviana Ragefire" id="39747" boss="true"/>
+    </boss>
+    <boss encounter="Baltharus the Warborn" instance="The Ruby Sanctum">
+        <mob name="Baltharus the Warborn" id="39751" boss="true"/>
+    </boss>
+    <boss encounter="General Zarithrian" instance="The Ruby Sanctum">
+        <mob name="General Zarithrian" id="39746" boss="true"/>
+    </boss>
+    <boss encounter="Halion" instance="The Ruby Sanctum">
+        <mob name="Halion" id="39863" boss="true"/>
+        <mob name="Halion" id="40142" boss="true"/>
+    </boss>
+	
+	<boss encounter="Lady Naz'jar" instance="Throne of the Tides">
+		<mob name="Lady Naz'jar" id="40586" boss="true"/>
+	</boss>
+	<boss encounter="Commander Ulthok" instance="Throne of the Tides">
+		<mob name="Commander Ulthok" id="40765" boss="true"/>
+	</boss>
+	<boss encounter="Erunak Stonespeaker" instance="Throne of the Tides">
+		<mob name="Erunak Stonespeaker" id="40825" boss="true"/>
+		<mob name="Mindbender Ghur'sha" id="40788" boss="true"/>
+	</boss>
+	<boss encounter="Ozumat" instance="Throne of the Tides">
+		<mob name="Ozumat" id="42172" boss="true"/>
+		<mob name="Deep Murloc Invader" id="44658" boss="false"/>
+		<mob name="Vicious Mindlasher" id="44715" boss="false"/>
+		<mob name="Faceless Sapper" id="44752" boss="false"/>
+	</boss>
+	
+	<boss encounter="Rom'ogg Bonecrusher" instance="Blackrock Caverns">
+		<mob name="Rom'ogg Bonecrusher" id="39665" boss="true"/>
+	</boss>
+	<boss encounter="Corla, Herald of Twilight" instance="Blackrock Caverns">
+		<mob name="Corla, Herald of Twilight" id="39679" boss="true"/>
+	</boss>
+	<boss encounter="Karsh Steelbender" instance="Blackrock Caverns">
+		<mob name="Karsh Steelbender" id="39698" boss="true"/>
+	</boss>
+	<boss encounter="Beauty" instance="Blackrock Caverns">
+		<mob name="Beauty" id="39700" boss="true"/>
+	</boss>
+	<boss encounter="Ascendant Lord Obsidius" instance="Blackrock Caverns">
+		<mob name="Ascendant Lord Obsidius" id="39705" boss="true"/>
+	</boss>
+
+	<boss encounter="General Umbriss" instance="Grim Batol">
+		<mob name="General Umbriss" id="39625" boss="true"/>
+	</boss>
+	<boss encounter="Forgemaster Throngus" instance="Grim Batol">
+		<mob name="Forgemaster Throngus" id="40177" boss="true"/>
+	</boss>
+	<boss encounter="Drahga Shadowburner" instance="Grim Batol">
+		<mob name="Drahga Shadowburner" id="40319" boss="true"/>
+	</boss>
+	<boss encounter="Erudax" instance="Grim Batol">
+		<mob name="Erudax" id="40484" boss="true"/>
+	</boss>
+
+	<boss encounter="Temple Guardian Anhuur" instance="Halls of Origination">
+		<mob name="Temple Guardian Anhuur" id="39425" boss="true"/>
+	</boss>
+	<boss encounter="Earthrager Ptah" instance="Halls of Origination">
+		<mob name="Earthrager Ptah" id="39428" boss="true"/>
+	</boss>
+	<boss encounter="Anraphet" instance="Halls of Origination">
+		<mob name="Anraphet" id="39788" boss="true"/>
+	</boss>
+	<boss encounter="Isiset" instance="Halls of Origination">
+		<mob name="Isiset" id="39587" boss="true"/>
+	</boss>
+	<boss encounter="Ammunae" instance="Halls of Origination">
+		<mob name="Ammunae" id="39731" boss="true"/>
+	</boss>
+	<boss encounter="Setesh" instance="Halls of Origination">
+		<mob name="Setesh" id="39732" boss="true"/>
+	</boss>
+	<boss encounter="Rajh" instance="Halls of Origination">
+		<mob name="Rajh" id="39378" boss="true"/>
+	</boss>
+
+	<boss encounter="General Husam" instance="Lost City of the Tol'vir">
+		<mob name="General Husam" id="44577" boss="true"/>
+	</boss>
+	<boss encounter="High Prophet Barim" instance="Lost City of the Tol'vir">
+		<mob name="High Prophet Barim" id="43612" boss="true"/>
+	</boss>
+	<boss encounter="Lockmaw" instance="Lost City of the Tol'vir">
+		<mob name="Lockmaw" id="43614" boss="true"/>
+	</boss>
+	<boss encounter="Augh" instance="Lost City of the Tol'vir">
+		<mob name="Augh" id="49045" boss="true"/>
+	</boss>
+	<boss encounter="Siamat" instance="Lost City of the Tol'vir">
+		<mob name="Siamat" id="44819" boss="true"/>
+	</boss>
+	
+	<boss encounter="Corborus" instance="The Stonecore">
+		<mob name="Corborus" id="43438" boss="true"/>
+	</boss>
+	<boss encounter="Slabhide" instance="The Stonecore">
+		<mob name="Slabhide" id="43214" boss="true"/>
+	</boss>
+	<boss encounter="Ozruk" instance="The Stonecore">
+		<mob name="Ozruk" id="42188" boss="true"/>
+	</boss>
+	<boss encounter="High Priestess Azil" instance="The Stonecore">
+		<mob name="High Priestess Azil" id="42333" boss="true"/>
+	</boss>
+
+	<boss encounter="Grand Vizier Ertan" instance="The Vortex Pinnacle">
+		<mob name="Grand Vizier Ertan" id="43878" boss="true"/>
+	</boss>
+	<boss encounter="Altairus" instance="The Vortex Pinnacle">
+		<mob name="Altairus" id="43873" boss="true"/>
+	</boss>
+	<boss encounter="Asaad" instance="The Vortex Pinnacle">
+		<mob name="Asaad" id="43875" boss="true"/>
+	</boss>
+
+	<boss encounter="Argaloth" instance="Baradin Hold">
+		<mob name="Argaloth" id="47120" boss="true"/>
+	</boss>
+
+	<boss encounter="Magmaw" instance="Blackwing Descent">
+		<mob name="Magmaw" id="41570" boss="true"/>
+	</boss>
+	<boss encounter="Omnotron Defense System" instance="Blackwing Descent">
+		<mob name="Electron" id="42179" boss="true"/>
+		<mob name="Toxitron" id="42180" boss="true"/>
+		<mob name="Magmatron" id="42178" boss="true"/>
+		<mob name="Arcanotron" id="42166" boss="true"/>
+	</boss>
+	<boss encounter="Maloriak" instance="Blackwing Descent">
+		<mob name="Maloriak" id="41378" boss="true"/>
+	</boss>
+	<boss encounter="Atramedes" instance="Blackwing Descent">
+		<mob name="Atramedes" id="41442" boss="true"/>
+	</boss>
+	<boss encounter="Chimaeron" instance="Blackwing Descent">
+		<mob name="Chimaeron" id="43296" boss="true"/>
+	</boss>
+	<boss encounter="Nefarian" instance="Blackwing Descent">
+		<mob name="Nefarian" id="41376" boss="true"/>
+	</boss>
+
+	<boss encounter="Halfus Wyrmbreaker" instance="The Bastion of Twilight">
+		<mob name="Halfus Wyrmbreaker" id="44600" boss="true"/>
+	</boss>
+	<boss encounter="Valiona and Theralion" instance="The Bastion of Twilight">
+		<mob name="Valiona" id="45992" boss="true"/>
+		<mob name="Theralion" id="45993" boss="true"/>
+	</boss>
+	<boss encounter="Twilight Ascendant Council" instance="The Bastion of Twilight">
+		<mob name="Feludius" id="43687" boss="false"/>
+		<mob name="Ignacious" id="43686" boss="false"/>
+		<mob name="Arion" id="43688" boss="false"/>
+		<mob name="Terrastra" id="43689" boss="false"/>
+		<mob name="Elementium Monstrosity" id="43735" boss="true"/>
+	</boss>
+	<boss encounter="Cho'gall" instance="The Bastion of Twilight">
+		<mob name="Cho'gall" id="43324" boss="true"/>
+	</boss>
+	<boss encounter="Sinestra" instance="The Bastion of Twilight">
+		<mob name="Sinestra" id="45213" boss="true"/>
+	</boss>
+	
+	<boss encounter="Conclave of Wind" instance="Throne of the Four Winds">
+		<mob name="Nezir" id="45871" boss="true"/>
+		<mob name="Anshal" id="45870" boss="true"/>
+		<mob name="Rohash" id="45872" boss="true"/>
+	</boss>
+	<boss encounter="Al'Akir" instance="Throne of the Four Winds">
+		<mob name="Al'Akir" id="46753" boss="true"/>
+	</boss>
+
+    <boss instance="Zul'Aman" encounter="Akil'zon">
+        <mob boss="true" id="23574" name="Akil'zon"/>
+    </boss>
+    <boss instance="Zul'Aman" encounter="Daakara">
+        <mob boss="true" id="23863" name="Daakara"/>
+    </boss>
+    <boss instance="Zul'Aman" encounter="Halazzi">
+        <mob boss="true" id="23577" name="Halazzi"/>
+    </boss>
+    <boss instance="Zul'Aman" encounter="Hex Lord Malacrass">
+        <mob boss="true" id="24239" name="Hex Lord Malacrass"/>
+    </boss>
+    <boss instance="Zul'Aman" encounter="Jan'alai">
+        <mob boss="true" id="23578" name="Jan'alai"/>
+    </boss>
+    <boss instance="Zul'Aman" encounter="Nalorakk">
+        <mob boss="true" id="23576" name="Nalorakk"/>
+    </boss>
+    <boss encounter="Zul'jin" instance="Zul'aman">
+        <mob name="Zul'jin" id="23863" boss="true"/>
+    </boss>
+
+    <boss instance="Zul'Gurub" encounter="Bloodlord Mandokir">
+        <mob boss="true" id="52151" name="Bloodlord Mandokir"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="Gri'lek">
+        <mob boss="true" id="52258" name="Gri'lek"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="Hazza'rah">
+        <mob boss="true" id="52271" name="Hazza'rah"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="High Priest Venoxis">
+        <mob boss="true" id="52155" name="High Priest Venoxis"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="High Priestess Kilnara">
+        <mob boss="true" id="52059" name="High Priestess Kilnara"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="Jin'do the Godbreaker">
+        <mob boss="true" id="52148" name="Jin'do the Godbreaker"/>
+        <mob boss="true" id="52430" name="Hakkar's Chains"/>
+        <mob boss="false" id="52624" name="Twisted Spirit"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="Renataki">
+        <mob boss="true" id="52269" name="Renataki"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="Wushoolay">
+        <mob boss="true" id="52286" name="Wushoolay"/>
+    </boss>
+    <boss instance="Zul'Gurub" encounter="Zanzil">
+        <mob boss="true" id="52053" name="Zanzil"/>
+        <mob boss="false" id="52055" name="Zanzili Zombie"/>
+        <mob boss="false" id="52054" name="Zanzili Berserker"/>
+    </boss>
+	
+</root>

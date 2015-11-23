@@ -1,0 +1,53 @@
+Description of event filters
+-----------------------------------------------
+
+-- Source Filter --
+The text entered here is matched versus the source name.
+
+-- Destination Filter --
+The text entered here is matched versus the destination name.
+
+-- All fields filter --
+If any field in an event matches this text, then it is shown, otherwise not.
+
+-- Logical expression --
+This is an expression that looks like a mathematical expression with & and | () etc. A filter is specified with an expression in the form key="value". The " symbols are needed around the value. Multiple expressions can be written with & (logical and), | (logical or) between them. Expressions can also be surrounded with parenthesis to specify the order more explicitly.
+
+The things that can be searched for in the Logical expression field:
+Source name:
+keys: sourcename, sname
+Operations: =
+
+Destination name:
+keys: destinationname, destname, dname
+Operations: =
+
+Log type:
+keys: logtype
+Operations: =
+
+Skill name:
+keys: skill
+Operations: =
+
+Skill id:
+keys: skillid
+Operations: =
+
+Amount of damage, healing, power:
+keys: amount
+Operations: =  <  >
+
+Examples
+All events that Dracy does vs malygos
+sname="dracy" & dname="malygos"
+
+Damage, healing, power events with amount greater than 2000 but less than 10000
+amount>"2000" & amount<"10000"
+
+All events with the skill regrowth that either dracy or cracy does.
+(sname="dracy" | sname="cracy") & skill="regrowth"
+
+All events with log type SWING_DAMAGE or SWING_MISSED
+logtype="SWING_DAMAGE" | logtype="SWING_MISSED"
+

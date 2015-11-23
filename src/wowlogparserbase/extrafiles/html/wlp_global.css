@@ -1,0 +1,694 @@
+body
+{
+background-color: #ffffff;
+}
+
+  H1
+  {
+     text-align:left;
+	 color: #000000;
+  }
+
+  H2
+   {
+     text-align:left;
+	 color: #000000;
+  }
+
+  H3
+   {
+     text-align:left;
+	 color: #000000;
+  }
+
+   H4
+    {
+     text-align:left;
+	 color: #000000;
+  }
+
+  .DHTMLSuite_tabContainer span
+  {
+  color: black;
+  }
+
+
+  .DHTMLSuite_tabContainer .tabActive span
+    {
+  color: black;
+  }
+
+a:link {
+	 color: #000000;
+  }
+a:visited {
+	 color: #000000;
+  }
+a:active {
+	 color: #000000;
+  }
+a:hover {
+     color:#555555;
+  }
+
+a.name:link {
+color: #000000;
+text-decoration: none;
+}
+a.name:active {
+color:#000000;
+text-decoration: none;
+}
+a.name:visited {
+color: #000000;
+text-decoration: none;
+}
+a.name:hover {
+text-decoration: underline;
+color: #555555;
+}
+
+a.title:link {
+color: #000000;
+text-decoration: none;
+}
+a.title:active {
+color:#000000;
+text-decoration: none;
+}
+a.title:visited {
+color: #000000;
+text-decoration: none;
+}
+a.title:hover {
+color: #555555;
+text-decoration: underline;
+}
+
+  CAPTION.MYTABLEWHW
+  {
+     background-color:#e0e0e0;
+     color:black;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+     text-align:center;
+  }
+
+  TABLE.MYTABLEWHW
+  {
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#008000;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+     text-align:center;
+  }
+
+  TH.MYTABLEWHW
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:2px;
+     padding-right:2px;
+     text-align:center;
+  }
+
+  TR.MYTABLEWHW
+  {
+     border-style:hidden;
+     text-align:center;
+  }
+
+  TD.MYTABLEWHW
+  {
+     font-size:10pt;
+     background-color:#e0e0e0;
+     color:#000000;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+     border-color:black;
+  }
+
+
+  
+CAPTION.MYTABLEP
+  {
+     background-color:#e0e0e0;
+     color:white;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+     text-align:center;
+  }
+
+  TABLE.MYTABLEP
+  { 
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#808000;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+     text-align:center;
+  }
+
+  TH.MYTABLEP
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:2px;
+     padding-right:2px;
+     text-align:center;
+  }
+
+  TR.MYTABLEP
+  { 
+     border-style:hidden;
+     text-align:center;
+  }
+
+  TD.MYTABLEP
+  {  
+     font-size:10pt;
+     background-color:#000000;
+     color:#DDDDDD;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+     border-color:black;
+  }
+
+
+
+CAPTION.MYTABLEA
+  {
+     background-color:#e0e0e0;
+     color:white;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+     text-align:center;
+  }
+
+  TABLE.MYTABLEA
+  {
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#008080;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+     text-align:center;
+  }
+
+  TH.MYTABLEA
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:2px;
+     padding-right:2px;
+     text-align:center;
+  }
+
+  TR.MYTABLEA
+  {
+     border-style:hidden;
+     text-align:center;
+  }
+
+  TD.MYTABLEA
+  {
+     font-size:10pt;
+     background-color:#000000;
+     color:#DDDDDD;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+     border-color:black;
+  }
+
+
+
+
+  CAPTION.MYTABLEH
+  {
+     background-color:#e0e0e0;
+     color:black;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+     text-align:center;
+  }
+
+  TABLE.MYTABLEH
+  { 
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#008000;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+     text-align:center;
+  }
+
+  TH.MYTABLEH
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:2px;
+     padding-right:2px;
+     text-align:center;
+  }
+
+  TR.MYTABLEH
+  { 
+     border-style:hidden;
+     text-align:center;
+  }
+
+  TD.MYTABLEH
+  {  
+     font-size:10pt;
+     background-color:#000000;
+     color:#DDDDDD;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+     border-color:black;
+  }
+
+
+
+
+  CAPTION.MYTABLE
+  {
+     background-color:#e0e0e0;
+     color:black;
+     border-style:solid;
+     border-width:2px;
+     border-color:black;
+     text-align:center;
+  }
+
+  TABLE.MYTABLE
+  { 
+     font-family:arial;
+     border-collapse:collapse;
+     font-size:10pt;
+     background-color:#800000;
+     border-style:solid;
+     border-color:black;
+     border-width:2px;
+     rules:cols;
+     text-align:center;
+  }
+
+  TH.MYTABLE
+  {
+     font-size:10pt;
+     color:white;
+     padding-left:2px;
+     padding-right:2px;
+     text-align:center;
+  }
+
+  TR.MYTABLE
+  { 
+     border-style:hidden;
+     text-align:center;
+  }
+
+  TD.MYTABLE
+  {  
+     font-size:10pt;
+     background-color:#000000;
+     color:#DDDDDD;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+     border-color:black;
+  }
+
+
+ TD.MYTABLEPRI
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#FFFFFF;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+	}
+a.pri:link {
+     color:#FFFFFF;
+	 text-decoration: none;
+  }
+a.pri:visited {
+     color:#FFFFFF;
+	 text-decoration: none;
+  }
+a.pri:hover {
+     color:#FFFFFF;
+	 text-decoration: underline;
+  }
+a.pri:active {
+     color:#FFFFFF;
+	 text-decoration: none;
+  }
+
+ TD.MYTABLEDKN
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#C41F3B;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.dkn:link {
+     color:#C41F3B;
+	 text-decoration: none;
+  }
+a.dkn:visited {
+     color:#C41F3B;
+	 text-decoration: none;
+  }
+a.dkn:hover {
+     color:#C41F3B;
+	 text-decoration: underline;
+  }
+a.dkn:active {
+     color:#C41F3B;
+	 text-decoration: none;
+  }
+
+   TD.MYTABLEHUN
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#abd473;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.hun:link {
+     color:#abd473;
+	 text-decoration: none;
+  }
+a.hun:visited {
+     color:#abd473;
+	 text-decoration: none;
+  }
+a.hun:hover {
+     color:#abd473;
+	 text-decoration: underline;
+  }
+a.hun:active {
+     color:#abd473;
+	 text-decoration: none;
+  }
+
+    TD.MYTABLEWAR
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#c79c6e;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.war:link {
+     color:#c79c6e;
+	 text-decoration: none;
+  }
+a.war:visited {
+     color:#c79c6e;
+	 text-decoration: none;
+  }
+a.war:hover {
+     color:#c79c6e;
+	 text-decoration: underline;
+  }
+a.war:active {
+     color:#c79c6e;
+	 text-decoration: none;
+  }
+
+      TD.MYTABLEMAG
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#69ccf0;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.mag:link {
+     color:#69ccf0;
+	 text-decoration: none;
+  }
+a.mag:visited {
+     color:#69ccf0;
+	 text-decoration: none;
+  }
+a.mag:hover {
+     color:#69ccf0;
+	 text-decoration: underline;
+  }
+a.mag:active {
+     color:#69ccf0;
+	 text-decoration: none;
+  }
+
+       TD.MYTABLEROG
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#fff569;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.rog:link {
+     color:#fff569;
+	 text-decoration: none;
+  }
+a.rog:visited {
+     color:#fff569;
+	 text-decoration: none;
+  }
+a.rog:hover {
+     color:#fff569;
+	 text-decoration: underline;
+  }
+a.rog:active {
+     color:#fff569;
+	 text-decoration: none;
+  }
+
+         TD.MYTABLEWRL
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#9482ca;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.wrl:link {
+     color:#9482ca;
+	 text-decoration: none;
+  }
+a.wrl:visited {
+     color:#9482ca;
+	 text-decoration: none;
+  }
+a.wrl:hover {
+     color:#9482ca;
+	 text-decoration: underline;
+  }
+a.wrl:active {
+     color:#9482ca;
+	 text-decoration: none;
+  }
+
+    TD.MYTABLEPAL
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#f58cba;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.pal:link {
+     color:#f58cba;
+	 text-decoration: none;
+  }
+a.pal:visited {
+     color:#f58cba;
+	 text-decoration: none;
+  }
+a.pal:hover {
+     color:#f58cba;
+	 text-decoration: underline;
+  }
+a.pal:active {
+     color:#f58cba;
+	 text-decoration: none;
+  }
+
+     TD.MYTABLEDRD
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#ff7d0a;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.drd:link {
+     color:#ff7d0a;
+	 text-decoration: none;
+  }
+a.drd:visited {
+     color:#ff7d0a;
+	 text-decoration: none;
+  }
+a.drd:hover {
+     color:#ff7d0a;
+	 text-decoration: underline;
+  }
+a.drd:active {
+     color:#ff7d0a;
+	 text-decoration: none;
+  }
+
+    TD.MYTABLESMN
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#2459ff;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.smn:link {
+     color:#2459ff;
+	 text-decoration: none;
+  }
+a.smn:visited {
+     color:#2459ff;
+	 text-decoration: none;
+  }
+a.smn:hover {
+     color:#2459ff;
+	 text-decoration: underline;
+  }
+a.smn:active {
+     color:#2459ff;
+	 text-decoration: none;
+  }
+
+    TD.MYTABLEUNK
+  {
+     font-size:10pt;
+	 font-weight:bold;
+     background-color:black;
+     color:#DDDDDD;
+     border-style:solid;
+     border-width:1px;
+     text-align:center;
+     padding-left:2px;
+     padding-right:2px;
+	 font-weight:bold;
+     border-color:black;
+  }
+a.unk:link {
+     color:#DDDDDD;
+	 text-decoration: none;
+  }
+a.unk:visited {
+     color:#DDDDDD;
+	 text-decoration: none;
+  }
+a.unk:hover {
+     color:#DDDDDD;
+	 text-decoration: underline;
+  }
+a.unk:active {
+     color:#DDDDDD;
+	 text-decoration: none;
+  }
+  

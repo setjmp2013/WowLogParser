@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="WowLogParser" default="default" basedir=".">
+    <description>Builds, tests, and runs the project WowLogParser.</description>
+    <import file="nbproject/build-impl.xml"/>
+
+    <target name="-post-jar">
+        <copy file="WowLogParser.exe" todir="${dist.dir}" verbose="true"/>
+        <copy file="WowLogParser_serverjvm.exe" todir="${dist.dir}" verbose="true"/>
+        <mkdir dir="${dist.dir}/bossinfo"/>
+        <copy todir="${dist.dir}/bossinfo">
+            <fileset file="bossinfo/ClassParsing.xml"/>
+            <fileset file="bossinfo/ClassParsingDE.xml"/>
+            <fileset file="bossinfo/ClassParsingES.xml"/>
+            <fileset file="bossinfo/ClassParsingFR.xml"/>
+        </copy>
+        <java fork="true" classname="wowlogparserbase.VersionAnt" classpath="build/classes">
+            <redirector outputproperty="wlp.version"/>
+        </java>
+        <java fork="true" classname="wowlogparserbase.VersionAnt" classpath="build/classes">
+            <arg value="underscore"/>
+            <redirector outputproperty="wlp.version.underscore"/>
+        </java>
+<!--
+        <java classname="wowlogparserbase.VersionAnt" classpath="${build.classes.dir}" outputproperty="wlp.version" failonerror="true"/>
+        <java classname="wowlogparserbase.VersionAnt" args="underscore" classpath="${build.classes.dir}" outputproperty="wlp.version.underscore" failonerror="true"/>
+-->
+<!--
+        <property name="wlp.version" value="1.45.2"/>
+        <property name="wlp.version.underscore" value="1_45_2"/>
+-->
+        <property name="wlp.dist.version.dir" value="${wlp.dist.dir}/WowLogParser${wlp.version}"/>
+        <property name="wlp.dist.version.zipfile" value="${wlp.dist.dir}/WowLogParser_bin_${wlp.version.underscore}.zip"/>
+        <fail unless="wlp.dist.dir" message="Must set wlp.dist.dir"/>
+        <delete dir="${wlp.dist.dir}" verbose="true"/>
+        <mkdir dir="${wlp.dist.dir}"/>
+        <mkdir dir="${wlp.dist.version.dir}"/>
+        <copy todir="${wlp.dist.version.dir}">
+            <fileset dir="${dist.dir}" excludes="README.TXT"/>
+        </copy>
+        <zip basedir="${wlp.dist.dir}" destfile="${wlp.dist.version.zipfile}"/>
+    </target>
+
+    <!--
+
+    There exist several targets which are by default empty and which can be 
+    used for execution of your tasks. These targets are usually executed 
+    before and after some main targets. They are: 
+
+      -pre-init:                 called before initialization of project properties
+      -post-init:                called after initialization of project properties
+      -pre-compile:              called before javac compilation
+      -post-compile:             called after javac compilation
+      -pre-compile-single:       called before javac compilation of single file
+      -post-compile-single:      called after javac compilation of single file
+      -pre-compile-test:         called before javac compilation of JUnit tests
+      -post-compile-test:        called after javac compilation of JUnit tests
+      -pre-compile-test-single:  called before javac compilation of single JUnit test
+      -post-compile-test-single: called after javac compilation of single JUunit test
+      -pre-jar:                  called before JAR building
+      -post-jar:                 called after JAR building
+      -post-clean:               called after cleaning build products
+
+    (Targets beginning with '-' are not intended to be called on their own.)
+
+    Example of inserting an obfuscator after compilation could look like this:
+
+        <target name="-post-compile">
+            <obfuscate>
+                <fileset dir="${build.classes.dir}"/>
+            </obfuscate>
+        </target>
+
+    For list of available properties check the imported 
+    nbproject/build-impl.xml file. 
+
+
+    Another way to customize the build is by overriding existing main targets.
+    The targets of interest are: 
+
+      -init-macrodef-javac:     defines macro for javac compilation
+      -init-macrodef-junit:     defines macro for junit execution
+      -init-macrodef-debug:     defines macro for class debugging
+      -init-macrodef-java:      defines macro for class execution
+      -do-jar-with-manifest:    JAR building (if you are using a manifest)
+      -do-jar-without-manifest: JAR building (if you are not using a manifest)
+      run:                      execution of project 
+      -javadoc-build:           Javadoc generation
+      test-report:              JUnit report generation
+
+    An example of overriding the target for project execution could look like this:
+
+        <target name="run" depends="WowLogParser-impl.jar">
+            <exec dir="bin" executable="launcher.exe">
+                <arg file="${dist.jar}"/>
+            </exec>
+        </target>
+
+    Notice that the overridden target depends on the jar target and not only on 
+    the compile target as the regular run target does. Again, for a list of available 
+    properties which you can use, check the target you are overriding in the
+    nbproject/build-impl.xml file. 
+
+    -->
+</project>

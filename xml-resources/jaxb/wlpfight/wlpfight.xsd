@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!--
+    ***********************************************
+    *
+    *     Main Fight element definition
+    *
+    ***********************************************
+    -->
+
+    <xs:element name="Fight">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Merged" type="xs:boolean"/>
+                <xs:element name="Duration" type="xs:double"/>
+                <xs:element name="ActiveDuration" type="xs:double"/>
+                <xs:element name="NumMobs" type="xs:int"/>
+                <xs:element name="TotalDamage" type="xs:long"/>
+                <xs:element name="TotalHealing" type="xs:long"/>
+                <xs:element name="Npcs" type="npcsXmlType"/>
+                <xs:element name="DispelInfo" type="dispelInfoXmlType"/>
+                <xs:element name="InterruptInfo" type="interruptInfoXmlType"/>
+                <xs:element name="Victim" type="victimXmlType"/>
+                <xs:element name="Participant" type="participantXmlType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="DamageGraph" type="lineGraphXmlType" minOccurs="0"/>
+                <xs:element name="HealingGraph" type="lineGraphXmlType" minOccurs="0"/>
+                <xs:element name="WhwTable" type="tableXmlType"/>
+            </xs:sequence>
+            <xs:attribute name="guid" type="xs:string"/>
+            <xs:attribute name="name" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="npcsXmlType">
+        <xs:sequence>
+            <xs:element name="Npc" maxOccurs="unbounded" minOccurs="0" type="npcXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dispelInfoXmlType">
+        <xs:sequence>
+            <xs:element name="AuraDispelled" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="DispelEvent" type="spellAuraDispelledEventXmlType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="name" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="interruptInfoXmlType">
+        <xs:sequence>
+            <xs:element name="SpellInterrupted" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="InterruptEvent" type="spellInterruptEventXmlType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="name" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="victimXmlType">
+        <xs:sequence>
+            <xs:element name="Participant" type="participantXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--
+    ***********************************************
+    *
+    *     Event types.
+    *
+    ***********************************************
+    -->
+    <xs:complexType name="basicEventXmlType">
+        <xs:attribute name="sona" type="xs:string" use="required"/>
+        <xs:attribute name="sogu" type="xs:string" use="required"/>
+        <xs:attribute name="sofl" type="xs:long" use="required"/>
+        <xs:attribute name="dena" type="xs:string" use="required"/>
+        <xs:attribute name="degu" type="xs:string" use="required"/>
+        <xs:attribute name="defl" type="xs:long" use="required"/>
+        <xs:attribute name="ty" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="spellInfoEventXmlType">
+        <xs:complexContent>
+            <xs:extension base="basicEventXmlType">
+                <xs:attribute name="spid" type="xs:int" use="required"/>
+                <xs:attribute name="spna" type="xs:string" use="required"/>
+                <xs:attribute name="spsc" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="spellAuraBaseEventXmlType">
+        <xs:complexContent>
+            <xs:extension base="basicEventXmlType">
+                <xs:attribute name="spid" type="xs:int" use="required"/>
+                <xs:attribute name="spna" type="xs:string" use="required"/>
+                <xs:attribute name="spsc" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="spellInterruptEventXmlType">
+        <xs:complexContent>
+            <xs:extension base="spellInfoEventXmlType">
+                <xs:attribute name="spxid" type="xs:int" use="required"/>
+                <xs:attribute name="spxna" type="xs:string" use="required"/>
+                <xs:attribute name="spxsc" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="spellAuraDispelledEventXmlType">
+        <xs:complexContent>
+            <xs:extension base="spellAuraBaseEventXmlType">
+                <xs:attribute name="spxid" type="xs:int" use="required"/>
+                <xs:attribute name="spxna" type="xs:string" use="required"/>
+                <xs:attribute name="spxsc" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!--
+    ***********************************************
+    *
+    *     Various type definitions
+    *
+    ***********************************************
+    -->
+
+    <xs:complexType name="npcXmlType">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="guid" type="xs:string" use="required"/>
+        <xs:attribute name="id" type="xs:int" use="required"/>
+        <xs:attribute name="month" type="xs:int" use="required"/>
+        <xs:attribute name="day" type="xs:int" use="required"/>
+        <xs:attribute name="hour" type="xs:int" use="required"/>
+        <xs:attribute name="minute" type="xs:int" use="required"/>
+        <xs:attribute name="second" type="xs:double" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="amountAndCountXmlType">
+        <xs:sequence>
+            <xs:element name="Am" type="xs:long" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="AvA" type="xs:double" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="MaA" type="xs:double" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Hi" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="THi" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Ab" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Bl" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Cri" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Cru" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Gla" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Do" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Mi" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Pa" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Ref" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Res" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="TMi" type="xs:int" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="AmOv" type="xs:long" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="AmAb" type="xs:long" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="AmRe" type="xs:long" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="AmBl" type="xs:long" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Hps" type="xs:double" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Dps" type="xs:double" minOccurs="0" maxOccurs="1" default="0"/>
+            <xs:element name="Pps" type="xs:double" minOccurs="0" maxOccurs="1" default="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="totalXmlType">
+        <xs:sequence>
+            <xs:element name="AmountAndCount" type="amountAndCountXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="spellInformationXmlType">
+        <xs:sequence>
+            <xs:element name="AmountAndCount" type="amountAndCountXmlType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int"/>
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="school" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="singleXmlType">
+        <xs:sequence>
+            <xs:element name="SpellInfo" type="spellInformationXmlType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="singleAndTotalXmlType">
+        <xs:sequence>
+            <xs:element name="Single" type="singleXmlType"/>
+            <xs:element name="Total" type="totalXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="totalOnlyXmlType">
+        <xs:sequence>
+            <xs:element name="Total" type="totalXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="damageInfoXmlType">
+        <xs:sequence>
+            <xs:element name="TotalDamage" type="totalXmlType"/>
+            <xs:element name="Swing" type="totalOnlyXmlType"/>
+            <xs:element name="PhysicalSkills" type="singleAndTotalXmlType"/>
+            <xs:element name="Ranged" type="singleAndTotalXmlType"/>
+            <xs:element name="Spells" type="singleAndTotalXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="healingInfoXmlType">
+        <xs:sequence>
+            <xs:element name="TotalHealing" type="totalXmlType"/>
+            <xs:element name="Spells" type="singleAndTotalXmlType"/>
+            <xs:element name="SpellsPeriodic" type="singleAndTotalXmlType"/>
+            <xs:element name="SpellsDirect" type="singleAndTotalXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="powerInfoXmlType">
+        <xs:sequence>
+            <xs:element name="TotalPower" type="totalXmlType"/>
+            <xs:element name="Spells" type="singleAndTotalXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="petsListXmlType">
+        <xs:sequence>
+            <xs:element name="PetInfo">
+                <xs:complexType>
+                    <xs:attribute name="name" type="xs:string"/>
+                    <xs:attribute name="guid" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="doubleArrayXmlType">
+        <xs:list itemType="xs:double"/>
+    </xs:simpleType>
+
+    <xs:complexType name="lineGraphXmlType">
+        <xs:sequence>
+            <xs:element name="NumPoints" type="xs:int"/>
+            <xs:element name="XStep" type="xs:double"/>
+            <xs:element name="XValues" type="doubleArrayXmlType"/>
+            <xs:element name="YValues" type="doubleArrayXmlType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tableRowXmlType">
+        <xs:sequence>
+            <xs:element name="Col" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tableXmlType">
+        <xs:sequence>
+            <xs:element name="NumRows" type="xs:int"/>
+            <xs:element name="NumCols" type="xs:int"/>
+            <xs:element name="HeaderRow" type="tableRowXmlType"/>
+            <xs:element name="BodyRow" type="tableRowXmlType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--
+    ***********************************************
+    *
+    *     Participant definitions
+    *
+    ***********************************************
+    -->
+
+    <xs:complexType name="playerInfoXmlType">
+        <xs:sequence>
+            <xs:element name="Damage" type="damageInfoXmlType"/>
+            <xs:element name="Healing" type="healingInfoXmlType"/>
+            <xs:element name="Power" type="powerInfoXmlType"/>
+            <xs:element name="DamageGraph" type="lineGraphXmlType" minOccurs="0"/>
+            <xs:element name="HealingGraph" type="lineGraphXmlType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="petInfoXmlType">
+        <xs:sequence>
+            <xs:element name="Pets" type="petsListXmlType"/>
+            <xs:element name="Damage" type="damageInfoXmlType"/>
+            <xs:element name="Healing" type="healingInfoXmlType"/>
+            <xs:element name="Power" type="powerInfoXmlType"/>
+            <xs:element name="DamageGraph" type="lineGraphXmlType" minOccurs="0"/>
+            <xs:element name="HealingGraph" type="lineGraphXmlType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="participantBaseXmlType">
+        <xs:sequence>
+            <xs:element name="ActiveDuration" type="xs:double"/>
+            <xs:element name="ActiveDamageDuration" type="xs:double"/>
+            <xs:element name="ActiveHealingDuration" type="xs:double"/>
+            <xs:element name="TotalDamage" type="totalXmlType"/>
+            <xs:element name="TotalHealing" type="totalXmlType"/>
+            <xs:element name="Player" type="playerInfoXmlType"/>
+            <xs:element name="Pet" type="petInfoXmlType"/>
+            <xs:element name="DamageGraph" type="lineGraphXmlType" minOccurs="0"/>
+            <xs:element name="HealingGraph" type="lineGraphXmlType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="class" type="xs:string"/>
+        <xs:attribute name="guid" type="xs:string"/>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="participantXmlType">
+        <xs:complexContent>
+            <xs:extension base="participantBaseXmlType">
+                <xs:sequence>
+                    <xs:element name="ReceivedEvents">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="Participant" type="participantReceivedXmlType"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="participantReceivedXmlType">
+        <xs:complexContent>
+            <xs:extension base="participantBaseXmlType">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
+
+
+
+
+
+
+
+
+
+
+
+
